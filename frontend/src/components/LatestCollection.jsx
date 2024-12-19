@@ -205,7 +205,7 @@ const LatestCollection = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   useEffect(() => {
-    setLatestProducts(products.slice(0, 200)); // Get the latest 10 products
+    setLatestProducts(products.slice(0, 10)); // Get the latest 10 products
   }, [products]);
 
   const handleShopNowClick = () => {

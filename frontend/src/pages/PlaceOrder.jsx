@@ -894,6 +894,7 @@ const PlaceOrder = () => {
     return totalAmount;
   };
 
+
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     try {
@@ -931,8 +932,50 @@ const PlaceOrder = () => {
             headers: { token },
           });
           if (response.data.success) {
-            setCartItems({});
-            navigate('/orders');
+            const orderId = response.data._id || response.data.order?._id; // Adjust based on response structure
+            console.log(response.data)
+            console.log("Order placed successfully:", orderId);
+            console.log("Order placed successfully:", orderData);
+  
+            const emailHtml = `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+              <h2 style="color: #4CAF50;">New Order Confirmation</h2>
+              <p><strong>Order ID:</strong> ${response.data.orderId}</p>
+              <p><strong>Total Amount:</strong> $${orderData.amount}</p>
+              <h3>Shipping Address:</h3>
+              <p>${JSON.stringify(orderData.address, null, 2)}</p>
+              <h3>Order Items:</h3>
+              <ul>
+                ${orderData.items
+                  .map(
+                    (item) =>
+                      `<li>${item.name} (Size: ${item.size}) - Quantity: ${item.quantity}</li>`
+                  )
+                  .join("")}
+              </ul>
+              <p>Thank you for your order!</p>
+            </div>
+          `;
+
+          // Send email to admin and user
+          const emailResponse = await axios.post(
+            "http://localhost:4000/api/send-mail",
+            {
+              email: ["singhrohit44164@gmail.com", formData.email],
+              subject: `Order Confirmation - Order ID: ${response.data.orderId}`,
+              html: emailHtml,
+            },
+            { headers: { token } }
+          );
+
+          if (emailResponse.data.success) {
+            console.log("Emails sent successfully to admin and user.");
+          } else {
+            toast.error("Failed to send emails.");
+          }
+
+          setCartItems({});
+          navigate("/orders");
           } else {
             toast.error(response.data.message);
           }

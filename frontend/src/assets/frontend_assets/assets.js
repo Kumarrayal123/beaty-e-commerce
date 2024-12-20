@@ -109,6 +109,7 @@ export const products = [
         category: "Women",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
+        colors: ["red", "blue", "green"],
         date: 1716634345448,
         bestseller: true
     },

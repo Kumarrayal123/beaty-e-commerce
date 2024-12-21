@@ -7,16 +7,23 @@ export const sendMail = async (req, res) => {
         const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: "singhrohit44164@gmail.com",
-            pass: "lmjd uuyy lrzo vymu",
+            user: "pandureddypatterns@gmail.com",
+            pass: "ahyg lifr qvvp qkpr",
         },
         });
+
+        // const attachments = orderData.items.map((item, index) => ({
+        //     filename: `item${index}.jpg`,
+        //     path: item.image, // Local file path or URL
+        //     cid: `item${index}`, // Content ID to match in HTML
+        //   }));
     
         const mailOptions = {
         from: process.env.EMAIL,
         to: email,
         subject,
         html,
+        // attachments,
         };
     
         transporter.sendMail(mailOptions, (error, info) => {

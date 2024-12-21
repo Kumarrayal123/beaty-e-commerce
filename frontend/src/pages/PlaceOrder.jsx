@@ -918,6 +918,7 @@ const PlaceOrder = () => {
       let orderData = {
         address: formData,
         items: orderItems,
+        // item:image,
         amount: calculateTotalAmount(),
       };
 
@@ -937,31 +938,64 @@ const PlaceOrder = () => {
             console.log("Order placed successfully:", orderId);
             console.log("Order placed successfully:", orderData);
   
-            const emailHtml = `
-            <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-              <h2 style="color: #4CAF50;">New Order Confirmation</h2>
-              <p><strong>Order ID:</strong> ${response.data.orderId}</p>
-              <p><strong>Total Amount:</strong> $${orderData.amount}</p>
-              <h3>Shipping Address:</h3>
-              <p>${JSON.stringify(orderData.address, null, 2)}</p>
-              <h3>Order Items:</h3>
-              <ul>
-                ${orderData.items
-                  .map(
-                    (item) =>
-                      `<li>${item.name} (Size: ${item.size}) - Quantity: ${item.quantity}</li>`
-                  )
-                  .join("")}
-              </ul>
-              <p>Thank you for your order!</p>
-            </div>
-          `;
+          //   const emailHtml = `
+          //   <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+          //     <h2 style="color: #4CAF50;">New Order Confirmation</h2>
+          //     <p><strong>Order ID:</strong> ${response.data.orderId}</p>
+          //     <p><strong>Total Amount:</strong> $${orderData.amount}</p>
+              
+            
+              
+          //     <p>${JSON.stringify(orderData.address, null, 2)}</p>
+          //     <h3>Order Items:</h3>
+          //     <ul>
+          //       ${orderData.items
+          //         .map(
+          //           (item) =>
+          //             `
+          //            <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto; margin-right: 10px;" />
+          //           <li>${item.name} (Size: ${item.size}) - Quantity: ${item.quantity}</li>`
+          //         )
+          //         .join("")}
+          //     </ul>
+          //     <p>Thank you for your order!</p>
+          //   </div>
+          // `;
 
           // Send email to admin and user
+          const emailHtml = `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+            <h2 style="color: #4CAF50;">New Order Confirmation</h2>
+            <p><strong>Order ID:</strong> ${response.data.orderId}</p>
+            <p><strong>Total Amount:</strong> $${orderData.amount}</p>
+            
+            <h3>Order Items:</h3>
+            <ul style="list-style-type: none; padding: 0;">
+              ${orderData.items
+                .map(
+                  (item) =>
+                    `<li style="margin-bottom: 15px; display: flex; align-items: center;">
+                       <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto; margin-right: 15px; border: 1px solid #ccc; border-radius: 5px;" />
+                      <div>
+                        <p style="margin: 0;"><strong>${item.name}</strong></p>
+                        <p style="margin: 0;">Size: ${item.size}</p>
+                        <p style="margin: 0;">Quantity: ${item.quantity}</p>
+                      </div>
+                    </li>`
+                )
+                .join("")}
+            </ul>
+            <p>Thank you for your order!</p>
+          </div>
+          `;
+          
+          
+          
           const emailResponse = await axios.post(
             "http://localhost:4000/api/send-mail",
             {
-              email: ["singhrohit44164@gmail.com", formData.email],
+              
+              email: ["kardamkumar13@gmail.com"],
               subject: `Order Confirmation - Order ID: ${response.data.orderId}`,
               html: emailHtml,
             },

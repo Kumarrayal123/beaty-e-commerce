@@ -23,32 +23,28 @@
 // export default authUser
 
 import jwt from 'jsonwebtoken';
-// import userModel from '../models/userModel.js';
+// import userModel from '../models/userModel.js'; // Uncomment this line when user lookup is needed
 
 const authUser = async (req, res, next) => {
-  const { token } = req.headers;
+  const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
 
   if (!token) {
-    return res.json({ success: false, message: 'Not Authorized. Login Again' });
+    return res.status(401).json({ success: false, message: 'Not Authorized. Login Again' });
   }
 
   try {
-    const token_decode = jwt.verify(token, process.env.JWT_SECRET);
-    // const userData = await userModel.findById(token_decode.id);
-    req.body.userId = token_decode.id
-    next()
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
 
-    // if (!userData) {
-    //   return res.json({ success: false, message: 'User not found' });
-    // }
+  
+    req.body.userId = decodedToken.id;
+    
+    next();
 
-    // req.body.userId = token_decode.id;
-    // req.user = userData; // Attach user data to the request object
-    // next();
   } catch (error) {
-    console.log(error);
-    res.json({ success: false, message: error.message });
+    console.error('Error verifying token:', error);
+    res.status(401).json({ success: false, message: 'Invalid or expired token.' });
   }
 };
 
 export default authUser;
+

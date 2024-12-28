@@ -10,7 +10,9 @@ a.active hr{
 *{
   font-size: outfit;
 }
-
+/* body{
+  background-color: black;
+} */
 
 .prata-regular {
   font-family: "Prata", serif;
@@ -31,4 +33,8 @@ a.active hr{
 
 .carousel-status{
   display: none;
+}
+.navbar{
+  /* background-color: black; */
+  color: white;
 }

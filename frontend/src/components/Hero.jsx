@@ -55,9 +55,9 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel styles
-import HeroImage from '../assets/frontend_assets/Hero.png';
-import HeroImage1 from '../assets/frontend_assets/Hero_1.png';
-import HeroImage2 from '../assets/frontend_assets/Hero3.png';
+import HeroImage from '../assets/frontend_assets/Hero_1.1.jpg';
+import HeroImage1 from '../assets/frontend_assets/Hero_2.jpg';
+import HeroImage2 from '../assets/frontend_assets/Hero_3.png';
 
 const Hero = () => {
   return (
@@ -71,7 +71,7 @@ const Hero = () => {
         >
           <div>
             <img
-              className="w-full h-60px object-cover"
+              className="w-full h-6px object-cover"
               src={HeroImage}
               alt="Hero Image"
             />

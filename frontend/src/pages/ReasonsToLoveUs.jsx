@@ -60,6 +60,12 @@ import Love4 from '../assets/frontend_assets/Love4.webp';
 import Love5 from '../assets/frontend_assets/Love5.webp';
 import Love6 from '../assets/frontend_assets/Love6.webp';
 import Title from '../components/Title';
+import { Carousel } from 'react-responsive-carousel';
+import image1 from '../assets/frontend_assets/p_img1.webp'
+import image2 from '../assets/frontend_assets/p_img2.webp'
+import image3 from '../assets/frontend_assets/p_img4.webp'
+import image4 from '../assets/frontend_assets/p_img5.webp'
+import image5 from '../assets/frontend_assets/p_img6.webp'
 
 const ReasonsToLoveUs = () => {
   const reasons = [
@@ -70,6 +76,27 @@ const ReasonsToLoveUs = () => {
     { icon: Love5, title: "Timeless Classics" },
     { icon: Love6, title: "Simple is Authentic" },
   ];
+  // const images = [image1,image2,image3.png]; // Update with your image paths
+  // const responsive = {
+  //   superLargeDesktop: {
+  //     breakpoint: { max: 4000, min: 1280 },
+  //     items: 1,
+  //   },
+  //   desktop: {
+  //     breakpoint: { max: 1280, min: 1024 },
+  //     items: 1,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 768 },
+  //     items: 1,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 768, min: 0 },
+  //     items: 1,
+  //   },
+  // };
+  
+
 
   const testimonials = [
     {
@@ -124,6 +151,121 @@ const ReasonsToLoveUs = () => {
       <button className="mt-8 px-6 py-3 bg-black text-white text-lg rounded-lg hover:bg-gray-800 transition-all duration-300">
         Our Brand Story
       </button>
+
+      <div className="border border-gray-400">
+    
+      {/* <Carousel
+      showThumbs={false}
+      infiniteLoop={true}
+      autoPlay={true}
+      interval={2000}
+      showIndicators={false}
+      centerMode={true}
+      centerSlidePercentage={25} // Show 3 images at a time
+      dynamicHeight={true}
+      emulateTouch={true} // Enables swipe on touch devices
+      swipeable={true}
+      showArrows={true} // Show navigation arrows
+    >
+      <div >
+        <img
+          className="object-contain"
+          src={image1}
+          alt="Hero Image"
+          style={{ width: '100%', height: '400px' }}
+        />
+      </div>
+      <div>
+        <img
+          className="object-contain"
+          src={image2}
+          alt="Hero Image 1"
+          style={{ width: '100%', height: '400px' }}
+        />
+      </div>
+      <div>
+        <img
+          className="object-contain"
+          src={image3}
+          alt="Hero Image 2"
+          style={{ width: '100%', height: '400px' }}
+        />
+      </div>
+      <div>
+        <img
+          className="object-contain"
+          src={image4}
+          alt="Hero Image 2"
+          style={{ width: '100%', height: '400px' }}
+        />
+      </div>
+      <div>
+        <img
+          className="object-contain"
+          src={image5}
+          alt="Hero Image 2"
+          style={{ width: '100%', height: '400px'}}
+        />
+      </div>
+      
+    </Carousel> */}
+    <Carousel
+        showThumbs={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={1000}
+        showIndicators={false}
+        centerMode={true}
+        centerSlidePercentage={25} // Show 3 images at a time
+        dynamicHeight={true}
+        emulateTouch={true} // Enables swipe on touch devices
+        swipeable={true}
+        showArrows={true} // Show navigation arrows
+      >
+        <div>
+          <img
+            className="object-contain"
+            src={image1}
+            alt="Hero Image"
+            style={{ width: '100%', height: '400px' }}
+          />
+        </div>
+        <div>
+          <img
+            className="object-contain"
+            src={image2}
+            alt="Hero Image 1"
+            style={{ width: '100%', height: '400px' }}
+          />
+        </div>
+        <div>
+          <img
+            className="object-contain"
+            src={image3}
+            alt="Hero Image 2"
+            style={{ width: '100%', height: '400px' }}
+          />
+        </div>
+        <div>
+          <img
+            className="object-contain"
+            src={image4}
+            alt="Hero Image 2"
+            style={{ width: '100%', height: '400px' }}
+          />
+        </div>
+        <div>
+          <img
+            className="object-contain"
+            src={image5}
+            alt="Hero Image 2"
+            style={{ width: '100%', height: '400px' }}
+          />
+        </div>
+      </Carousel>
+
+    </div>
+
 
       {/* Updated Testimonials Section */}
       <div className="bg-gray-50 py-12 px-4 mt-16">

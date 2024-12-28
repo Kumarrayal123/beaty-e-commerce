@@ -1,6 +1,7 @@
 
 import React from 'react';
-import logo from '../assets/frontend_assets/logo.png';
+// import logo from '../assets/frontend_assets/logo.png';
+import logo from '../assets/frontend_assets/manya_logo.png';
 import { Link } from 'react-router-dom';
 import insta from '../assets/frontend_assets/instagram_icon.png';
 import whatsapp from '../assets/frontend_assets/whatsapp_icon.png';
@@ -13,7 +14,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_1fr] gap-10 px-5">
         {/* Logo and Description */}
         <div>
-          <img src={logo} className="mb-5 w-32" alt="Company Logo" />
+          <img src={logo} className="w-20 h-auto rounded-lg bg-black shadow-md hover:scale-105 transition-transform" alt="Company Logo" />
           <p className="text-gray-600 text-sm">
             Beauty creams nourish and hydrate the skin, promoting a radiant and healthy appearance.
           </p>

@@ -100,13 +100,15 @@
 // export default Navbar;
 
 import React, { useContext, useState } from "react";
-import logo from '../assets/frontend_assets/logo.png';
+import logo from '../assets/frontend_assets/manya_logo.png';
 import search from '../assets/frontend_assets/search_icon.png';
-import user from '../assets/frontend_assets/profile_icon.png';
+ import user from '../assets/frontend_assets/profile_icon.png';
 import bag from '../assets/frontend_assets/cart_icon.png';
 import menu from '../assets/frontend_assets/menu_icon.png';
 import { Link, NavLink } from 'react-router-dom';
 import { ShopContext } from "../context/ShopContext";
+// import AccountCircleIcon from '../assets/frontend_assets/assets';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -124,11 +126,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative navbar ">
       {/* Main Navbar */}
-      <div className="flex items-center justify-between py-5 px-6 sm:px-10 font-medium">
+      <div className="flex items-center justify-between py-5 px-6 sm:px-10 font-medium ">
         <Link to={'/'}>
-          <img src={logo} className="w-36" alt="Logo" />
+          {/* <img src={logo} className="w-20 bg-black" alt="Logo" /> */}
+          <img 
+        src={logo} 
+        className="w-20 h-auto rounded-lg bg-black shadow-md hover:scale-105 transition-transform"
+        alt="Logo" 
+      />
         </Link>
 
         {/* Desktop Menu */}
@@ -147,7 +154,7 @@ const Navbar = () => {
         </ul>
 
         {/* Icons Section */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 bg-white ">
           <img
             onClick={() => setShowSearch(true)}
             src={search}
@@ -162,6 +169,7 @@ const Navbar = () => {
               className="w-5 cursor-pointer"
               alt="User Icon"
             />
+            {/* <AccountCircleIcon className="w-5 cursor-pointer" onClick={() => (token ? null : navigate('login'))} /> */}
             {token && (
               <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
                 <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">

@@ -1,17 +1,13 @@
-import p_img1 from './p_img1.png'
-import p_img from './p_img1_1.jpg'
-import p_img2_1 from './p_img2_1.png'
-import p_img2_2 from './p_img2_2.png'
-import p_img2_3 from './p_img2_3.png'
-import p_img2_4 from './p_img2_4.png'
-import p_img3 from './p_img3.png'
-import p_img4 from './p_img4.png'
-import p_img5 from './p_img5.png'
-import p_img6 from './p_img6.png'
-import p_img7 from './p_img7.png'
-import p_img8 from './p_img8.png'
-import p_img9 from './p_img9.png'
-import p_img10 from './p_img10.png'
+import p_img1 from './p_img1.webp'
+import p_img2 from './p_img2.webp'
+import p_img3 from './p_imag3.webp'
+import p_img4 from './p_img4.webp'
+import p_img5 from './p_img5.webp'
+import p_img6 from './p_img6.webp'
+import p_img7 from './p_img7.webp'
+import p_img8 from './p_img8.webp'
+import p_img9 from './p_img9.webp'
+import p_img10 from './p_img10.webp'
 import p_img11 from './p_img11.png'
 import p_img12 from './p_img12.png'
 import p_img13 from './p_img13.png'
@@ -59,7 +55,9 @@ import p_img52 from './p_img52.png'
 
 
 import logo from './logo.png'
-import hero_img from './hero_img.png'
+import HeroImage from './Hero.png';
+import HeroImage1 from './Hero_1.png';
+import HeroImage2 from './Hero2.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -80,7 +78,9 @@ import cross_icon from './cross_icon.png'
 
 export const assets = {
     logo,
-    hero_img,
+    HeroImage,
+    HeroImage1,
+    HeroImage2,
     cart_icon,
     dropdown_icon,
     exchange_icon,
@@ -102,10 +102,10 @@ export const assets = {
 export const products = [
     {
         _id: "aaaaa",
-        name: "Women Round Neck Cotton Top",
+        name: "Dark Aura Silk Tissue Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 100,
-        image: [p_img1,p_img],
+        price: 5999,
+        image: [p_img1,],
         category: "Women",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
@@ -115,10 +115,10 @@ export const products = [
     },
     {
         _id: "aaaab",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "High Spirits Silver Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 200,
-        image: [p_img2_1,p_img2_2,p_img2_3, p_img2_4],
+        price: 6999,
+        image: [p_img2],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -127,9 +127,9 @@ export const products = [
     },
     {
         _id: "aaaac",
-        name: "Girls Round Neck Cotton Top",
+        name: "Dear Divine Silver Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 220,
+        price: 6999,
         image: [p_img3],
         category: "Kids",
         subCategory: "Topwear",
@@ -139,9 +139,9 @@ export const products = [
     },
     {
         _id: "aaaad",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "Srimukha Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
+        price: 6990,
         image: [p_img4],
         category: "Men",
         subCategory: "Topwear",
@@ -151,9 +151,9 @@ export const products = [
     },
     {
         _id: "aaaae",
-        name: "Women Round Neck Cotton Top",
+        name: "Soul Root Silver Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 130,
+        price: 6990,
         image: [p_img5],
         category: "Women",
         subCategory: "Topwear",
@@ -163,9 +163,9 @@ export const products = [
     },
     {
         _id: "aaaaf",
-        name: "Girls Round Neck Cotton Top",
+        name: "Sukla Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 140,
+        price: 6999,
         image: [p_img6],
         category: "Kids",
         subCategory: "Topwear",
@@ -175,9 +175,9 @@ export const products = [
     },
     {
         _id: "aaaag",
-        name: "Men Tapered Fit Flat-Front Trousers",
+        name: "Subakrithu Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 190,
+        price: 6990,
         image: [p_img7],
         category: "Men",
         subCategory: "Bottomwear",
@@ -187,9 +187,9 @@ export const products = [
     },
     {
         _id: "aaaah",
-        name: "Men Round Neck Pure Cotton T-shirt",
+        name: "Pramodutha Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 140,
+        price: 9999,
         image: [p_img8],
         category: "Men",
         subCategory: "Topwear",
@@ -199,9 +199,9 @@ export const products = [
     },
     {
         _id: "aaaai",
-        name: "Girls Round Neck Cotton Top",
+        name: "Dalaja Banarasi Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 100,
+        price: 9999,
         image: [p_img9],
         category: "Kids",
         subCategory: "Topwear",
@@ -211,9 +211,9 @@ export const products = [
     },
     {
         _id: "aaaaj",
-        name: "Men Tapered Fit Flat-Front Trousers",
+        name: "Dalaja Banarasi Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
+        price: 9999,
         image: [p_img10],
         category: "Men",
         subCategory: "Bottomwear",

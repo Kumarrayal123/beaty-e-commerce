@@ -8,7 +8,7 @@ import twitter from '../assets/frontend_assets/twitter.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-10">
+    <footer className="bg-gray-50 py-10 px-5">
       {/* Top Section */}
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_1fr] gap-10 px-5">
         {/* Logo and Description */}
@@ -25,17 +25,20 @@ const Footer = () => {
           <ul className="flex flex-col gap-2 text-gray-600">
             <li><Link to="/" className="hover:text-gray-900">Home</Link></li>
             <li><Link to="/Collection" className="hover:text-gray-900">Collection</Link></li>
-            <li><Link to="/About" className="hover:text-gray-900">About</Link></li>
-            <li><Link to="/Contact" className="hover:text-gray-900">Contact</Link></li>
+            <li><Link to="/SilkSaree" className="hover:text-gray-900">SilkSaree</Link></li>
+            <li><Link to="/BestSelling" className="hover:text-gray-900">BestSelling</Link></li>
           </ul>
         </div>
+
+
+        
 
         {/* Get in Touch */}
         <div>
           <p className="text-lg font-medium mb-5">GET IN TOUCH</p>
           <ul className="text-gray-600">
             <li className="mb-1">+91 86888 60223</li>
-            <li className="mb-1">kardamkumar13@gmail.com</li>
+            <li className="mb-1">manyacollections@gmail.com</li>
           </ul>
         </div>
 

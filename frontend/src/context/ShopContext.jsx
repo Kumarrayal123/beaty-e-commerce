@@ -146,7 +146,7 @@ import axios from 'axios';
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-  const currency = "$";
+  const currency = "₹";
   const delivery_fee = 10;
 
   // Ensure this environment variable is correctly set in your .env file

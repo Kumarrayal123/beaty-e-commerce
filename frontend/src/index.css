@@ -29,3 +29,6 @@ a.active hr{
   
 }
 
+.carousel-status{
+  display: none;
+}

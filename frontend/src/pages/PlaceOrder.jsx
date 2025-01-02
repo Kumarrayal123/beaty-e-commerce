@@ -930,8 +930,11 @@ const PlaceOrder = () => {
       switch (method) {
         case 'cod':
           const response = await axios.post('http://localhost:4000/api/order/place', orderData, {
-            headers: { token },
-          });
+            headers: { 
+              'Content-Type': 'application/json',
+               'Authorization': `Bearer ${token}` }
+          })
+          
           if (response.data.success) {
             const orderId = response.data._id || response.data.order?._id; // Adjust based on response structure
             console.log(response.data)

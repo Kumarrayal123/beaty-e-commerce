@@ -1,8 +1,6 @@
-
-
-
 import React, { useContext } from 'react';
 import { ShopContext } from '../context/ShopContext';
+import axios from 'axios';
 
 // Define or import the Text component
 const Text = ({ text1, text2 }) => (
@@ -11,8 +9,34 @@ const Text = ({ text1, text2 }) => (
   </span>
 );
 
-const Orders = () => {
+const Orders =  () => {
   const { products = [], currency } = useContext(ShopContext); // Default to an empty array if products is undefined
+
+  // const fetchOrders = async () => {
+  //   try {
+  //     // API call to fetch orders
+  //     const response = await axios.get('http://localhost:4000/api/order/getOrders');
+  
+  //     // Destructure productsList from the response
+  //     const { productsList } = response.data; // Ensure response.data.productsList exists
+  
+  //     // Log the products list
+  //     console.log('Products List:', productsList);
+  //   } catch (error) {
+  //     // Log general error message
+  //     console.error('Error fetching orders:', error.message);
+  
+  //     // Log specific API error response (if available)
+  //     if (error.response) {
+  //       console.error('Server responded with:', error.response.data);
+  //       console.error('Status Code:', error.response.status);
+  //     }
+  //   }
+  // };
+  
+  // // Call the function
+  // fetchOrders();
+  
 
   return (
     <div className='border-t pt-16'>

@@ -239,7 +239,46 @@ const Cart = () => {
       updateQuantity(itemId, size, newQuantity);
     }
   };
-
+  const fetchCart = async () => {
+    const token = localStorage.getItem('token'); // Get the token from local storage
+    const response = await fetch('/api/cart/get', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, // Pass the token for authentication
+      },
+    });
+  
+    const data = await response.json();
+    if (data.success) {
+      console.log('Cart retrieved successfully:', data.cartData);
+      // Use this cart data to update your frontend state (e.g., Redux or React state)
+    } else {
+      console.error('Error retrieving cart:', data.message);
+    }
+  };
+   
+  const updateCart = async (itemId, size, quantity) => {
+    const token = localStorage.getItem('token'); // Get the token from local storage
+    const response = await fetch('/api/cart/update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ itemId, size, quantity }),
+    });
+  
+    const data = await response.json();
+    if (data.success) {
+      console.log('Cart updated successfully:', data.cartData);
+      // Update frontend cart state if necessary
+    } else {
+      console.error('Error updating cart:', data.message);
+    }
+  };
+  
+  
   return (
     <div className="border-t pt-14">
       <div className="text-2xl mb-3">

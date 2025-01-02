@@ -35,9 +35,29 @@ a.active hr{
   display: none;
 }
 .navbar{
-  /* background-color: black; */
+  background-color: black;
   color: white;
 }
 
 
+.index{
+  z-index: -1;
+}
+.background{
+  background-color:black;
+}
+.navbar{
+  background-color:black;
+}
 
+.search{
+  background-color:black;
+}
+
+.user{
+  background-color:black;
+}
+
+.bag{
+  background-color:black;
+}

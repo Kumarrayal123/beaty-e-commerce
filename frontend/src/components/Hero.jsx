@@ -62,8 +62,8 @@ import HeroImage2 from '../assets/frontend_assets/Hero_3.png';
 const Hero = () => {
   return (
     <div>
-      <div className="flex flex-col sm:flex-row border border-gray-400">
-        <Carousel
+      <div className="flex flex-col sm:flex-row border border-gray-400" >
+        <Carousel className='index'
           showThumbs={false}
           infiniteLoop={true}
           autoPlay={true}

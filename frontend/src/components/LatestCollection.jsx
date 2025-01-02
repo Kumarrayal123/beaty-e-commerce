@@ -362,6 +362,8 @@ const LatestCollection = () => {
             <div className="text-center py-4">
               <p className="text-lg font-semibold text-gray-800">{product.name}</p>
               <p className="text-md text-gray-600">{currency} {product.price}</p>
+              {/* <span className="line-through text-gray-400">{currency} {product.Price}</span>{' '} */}
+  {/* <span className="text-red-600 font-bold">{currency} {product.Price}</span> */}
             </div>
           </div>
         ))}

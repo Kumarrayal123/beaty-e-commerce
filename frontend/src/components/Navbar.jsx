@@ -109,6 +109,12 @@ import { Link, NavLink } from 'react-router-dom';
 import { ShopContext } from "../context/ShopContext";
 // import AccountCircleIcon from '../assets/frontend_assets/assets';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import {faBars } from '@fortawesome/free-solid-svg-icons';
+
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -133,13 +139,13 @@ const Navbar = () => {
           {/* <img src={logo} className="w-20 bg-black" alt="Logo" /> */}
           <img 
         src={logo} 
-        className="w-20 h-auto rounded-lg bg-black shadow-md hover:scale-105 transition-transform"
+        className="w-20 h-auto bg-black shadow-md hover:scale-105 transition-transform"
         alt="Logo" 
       />
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden sm:flex gap-10 text-sm text-gray-700">
+        <ul className="hidden sm:flex gap-10 text-sm text-white-700">
           {[
             { path: '/', label: 'HOME' },
             { path: '/Collection', label: 'COLLECTION' },
@@ -148,27 +154,30 @@ const Navbar = () => {
           ].map(({ path, label }) => (
             <NavLink key={path} to={path} className="flex flex-col items-center gap-1">
               <p>{label}</p>
-              <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+              <hr className="w-2/4 border-none h-[2px] bg-gray-700 hidden" />
             </NavLink>
           ))}
         </ul>
 
         {/* Icons Section */}
-        <div className="flex items-center gap-4 bg-white ">
-          <img
+        <div className="flex items-center gap-4 bg-white  search">
+          {/* <img
             onClick={() => setShowSearch(true)}
-            src={search}
+            
+            
             className="w-5 cursor-pointer"
             alt="Search Icon"
-          />
+          /> */}
+<FontAwesomeIcon className="w-5 cursor-pointer h-10" icon={faMagnifyingGlass} onClick={() => setShowSearch(true)} />
 
-          <div className="group relative">
-            <img
+          <div className="group relative user">
+            {/* <img
               onClick={() => (token ? null : navigate('login'))}
               src={user}
               className="w-5 cursor-pointer"
               alt="User Icon"
-            />
+            /> */}
+            <FontAwesomeIcon className="h-5" icon={faUser} />
             {/* <AccountCircleIcon className="w-5 cursor-pointer" onClick={() => (token ? null : navigate('login'))} /> */}
             {token && (
               <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
@@ -185,20 +194,23 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/Cart" className="relative">
-            <img src={bag} className="w-5 cursor-pointer" alt="Cart Icon" />
-            <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
+          <Link to="/Cart" className="relative bag">
+            {/* <img src={bag} className="w-5 cursor-pointer" alt="Cart Icon" /> */}
+            <FontAwesomeIcon className="h-5" icon={faBagShopping} />
+            
+            <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-white text-black aspect-square rounded-full text-[8px]">
               {getCartCount}
             </p>
           </Link>
 
           {/* Mobile Menu Icon */}
-          <img
+          {/* <img
             onClick={() => setVisible(!visible)}
             src={menu}
             className="w-5 cursor-pointer sm:hidden"
             alt="Menu Icon"
-          />
+          /> */}
+          <FontAwesomeIcon className="w-5 cursor-pointer sm:hidden h-5" icon={faBars} onClick={() => setVisible(!visible)} />
         </div>
       </div>
 

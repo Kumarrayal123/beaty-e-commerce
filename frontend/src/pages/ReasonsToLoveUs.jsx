@@ -16,7 +16,11 @@ import image3 from '../assets/frontend_assets/p_img4.webp'
 import image4 from '../assets/frontend_assets/p_img5.webp'
 import image5 from '../assets/frontend_assets/p_img6.webp'
 import image6 from '../assets/frontend_assets/p_img7.webp'
+import image7 from '../assets/frontend_assets/p_img8.webp'
+import image8 from '../assets/frontend_assets/p_img9.webp'
+import image9 from '../assets/frontend_assets/p_img10.webp'
 import { Link } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 const ReasonsToLoveUs = () => {
@@ -30,7 +34,7 @@ const ReasonsToLoveUs = () => {
   ];
   
 
-const images = [image1, image2, image3, image4, image5, image6];
+  const images = [image1, image2, image3, image4, image5, image6,image7,image8,image9];
   
 
 
@@ -58,7 +62,7 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 
   return (
-    <div className="flex flex-col items-center p-5 bg-white font-sans px-10">
+    <div className="flex flex-col items-center p-5 bg-white font-sans px-5">
       <h2 className="text-3xl font-semibold text-center text-black mb-8">
         <Title text2="REASONS TO LOVE US" />
       </h2>
@@ -73,7 +77,7 @@ const images = [image1, image2, image3, image4, image5, image6];
       <img
         src={reason.icon}
         alt={reason.title}
-        className="w-20 h-20 mb-4 transition-all duration-300" // Increased bottom margin for spacing
+        className="w-20 h-20 mb-4 transition-all duration-300 " // Increased bottom margin for spacing
       />
       <p className="text-lg font-medium text-center text-gray-800">
         {reason.title}
@@ -86,84 +90,66 @@ const images = [image1, image2, image3, image4, image5, image6];
 
 
       {/* Brand Story Button */}
-      <button className="mt-5  px-5 py-3 bg-black text-white text-lg rounded-lg hover:bg-gray-800 transition-all duration-300">
+      {/* <button className="mt-3 px-3  px-7 py-3 bg-black text-white text-lg rounded-lg hover:bg-gray-800 transition-all duration-300">
         Our Brand Story
-      </button>
+      </button> */}
+      <button className="mt-3 px-6 py-3 bg-black text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-gray-800 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50">
+  Our Brand Story
+</button>
+
     
-<div className="py-7">
-<Carousel
-  showThumbs={false}
-  infiniteLoop={true}
-  autoPlay={true}
-  interval={3000} // Set the interval for autoplay
-  showIndicators={false}
-  centerMode={true}
-  centerSlidePercentage={33.33} // Show approximately 3 images at a time
-  dynamicHeight={false} // Set to false for consistent height
-  emulateTouch={true} // Enables swipe on touch devices
-  swipeable={true}
-  showArrows={true} // Show navigation arrows
->
-  <div>
-  <Link to="/collection">
-    <img
-      className="object-contain"
-      src={image1}
-      alt="Hero Image"
-      style={{ width: '100%', height: '400px' }} // Fixed height for consistency
-      
-    />
-    </Link>
-  </div>
-  <div>
-    <Link to ="/colection">
-    <img
-      className="object-contain"
-      src={image2}
-      alt="Hero Image 1"
-      style={{ width: '100%', height: '400px' }}
-    />
-    </Link>
-  </div>
-  <div>
-    <img
-      className="object-contain"
-      src={image3}
-      alt="Hero Image 2"
-      style={{ width: '100%', height: '400px' }}
-    />
-  </div>
-  <div>
-    <img
-      className="object-contain"
-      src={image4}
-      alt="Hero Image 3"
-      style={{ width: '100%', height: '400px' }}
-    />
-  </div>
-  <div>
-    <img
-      className="object-contain"
-      src={image5}
-      alt="Hero Image 4"
-      style={{ width: '100%', height: '400px' }}
-    />
-  </div>
-  <div>
-    <img
-      className="object-contain"
-      src={image6}
-      alt="Hero Image 5"
-      style={{ width: '100%', height: '400px' }}
-    />
-  </div>
-</Carousel>
+     
+{/* <div className="flex flex-col py-3 mt-5">
+      <Carousel
+        showThumbs={false}
+        infiniteLoop={true}
+        autoPlay={true}
+        interval={3000}
+        showIndicators={false}
+        showStatus={false}
+        centerMode={true} // Enables center mode for multiple images
+        centerSlidePercentage={33} // Show 3 images at once (33% width per image)
+      >
+        {images.map((image, index) => (
+          <div key={index} className="p-2">
+            <img
+              className="group-hover:scale-105 group-hover:shadow-xl transition-transform duration-300 ease-in-out "
+              src={image}
+              alt={`Slide ${index + 1}`}
+            />
+          </div>
+        ))}
+      </Carousel>
+    </div> */}
+
+<div className="flex flex-col py-3 mt-5">
+  <Carousel
+    showThumbs={false}
+    infiniteLoop={true}
+    autoPlay={true}
+    interval={3000}
+    showIndicators={false}
+    showStatus={false}
+    centerMode={true} // Enables center mode for multiple images
+    centerSlidePercentage={33} // Show 3 images at once (33% width per image)
+  >
+    {images.map((image, index) => (
+      <div key={index} className="p-2 group">
+        <img
+          className="w-full object-cover rounded-md shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl"
+          src={image}
+          alt={`Slide ${index + 1}`}
+        />
+      </div>
+    ))}
+  </Carousel>
 </div>
 
 
+
       {/* Updated Testimonials Section */}
-      <div className="bg-gray-50 py-12 px-4 mt-16">
-        <h2 className="text-2xl font-bold text-center mb-8">HEARD IT FROM YOU</h2>
+      <div className="bg-gray-50 py-12 px-4 mt-5">
+        <h2 className="text-2xl font-bold text-center mb-5 Title text2 "><Title text2=" HEARD IT FROM YOU"/></h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           {testimonials.map((testimonial, index) => (
             <div

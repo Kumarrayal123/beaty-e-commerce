@@ -156,7 +156,7 @@ const ShopContextProvider = (props) => {
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
-  
+  const [userData, setUserData] = useState(null);
   // Ensure this is called within a Router context
   const navigate = useNavigate();
 
@@ -191,6 +191,44 @@ const ShopContextProvider = (props) => {
       }
     }
   };
+  useEffect(() => {
+    if (token) {
+      const fetchUserData = async () => {
+        try {
+          const response = await axios.get(`${backendUrl}/api/user`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+      
+          // Log the entire response to confirm it contains the expected data
+          console.log("Fetched User Data:", response.data);
+      
+          if (response.data) {
+            setUserData(response.data); // Store user data in state
+          } else {
+            console.error("No data returned from API");
+            toast.error("Failed to fetch user information.");
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          toast.error("Failed to fetch user information.");
+        }
+      };
+      
+  
+      fetchUserData();
+    }
+    
+  }, [token]);
+
+  if (!userData) {
+    console.log("User data not loaded yet or fetch failed.");
+  }
+  useEffect(() => {
+    if (!token && localStorage.getItem('token')) {
+      setToken(localStorage.getItem('token'));
+    }
+  }, []);
+   
 
   // Calculate cart count
   const getCartCount = useMemo(() => {
@@ -259,7 +297,8 @@ const ShopContextProvider = (props) => {
     navigate,
     backendUrl,
     setToken,
-    token
+    token,
+    userData
   };
 
   return (

@@ -123,7 +123,7 @@ import Title from './Title';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+  const { setShowSearch, getCartCount,userData, navigate, token, setToken, setCartItems } = useContext(ShopContext);
 
   const logout = () => {
     navigate('/login');
@@ -131,7 +131,7 @@ const Navbar = () => {
     setToken('');
     setCartItems({});
   };
-
+// console.log(userData.name)
   const handleNavLinkClick = () => {
     setVisible(false); // Close the mobile menu when a link is clicked
   };
@@ -180,29 +180,38 @@ const Navbar = () => {
           /> */}
 <FontAwesomeIcon className="w-5 cursor-pointer h-10" icon={faMagnifyingGlass} onClick={() => setShowSearch(true)} />
 
-          <div className="group relative user">
-            {/* <img
-              onClick={() => (token ? null : navigate('login'))}
-              src={user}
-              className="w-5 cursor-pointer"
-              alt="User Icon"
-            /> */}
-            <FontAwesomeIcon className="h-5" icon={faUser} />
-            {/* <AccountCircleIcon className="w-5 cursor-pointer" onClick={() => (token ? null : navigate('login'))} /> */}
-            {token && (
-              <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
-                <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                  <p className="cursor-pointer hover:text-black">My Profile</p>
-                  <p onClick={() => navigate('/orders')} className="cursor-pointer hover:text-black">
-                    Orders
-                  </p>
-                  <p onClick={logout} className="cursor-pointer hover:text-black">
-                    Logout
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
+<div className="flex items-center gap-2 group relative user">
+  {/* User Icon */}
+  <FontAwesomeIcon
+    className="h-5 cursor-pointer"
+    icon={faUser}
+    onClick={() => {
+      if (!token) {
+        navigate('/login'); // Navigate to the login page
+      }
+    }}
+  />
+
+  {/* Display Username if Logged In */}
+  {token && userData && userData.name && <span className="text-gray-700 font-medium">{userData.name}</span>}
+
+  {/* Dropdown Menu for Logged-In Users */}
+  {token && (
+    <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
+      <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
+        <p className="cursor-pointer hover:text-black">My Profile</p>
+        <p onClick={() => navigate('/orders')} className="cursor-pointer hover:text-black">
+          Orders
+        </p>
+        <p onClick={logout} className="cursor-pointer hover:text-black">
+          Logout
+        </p>
+      </div>
+    </div>
+  )}
+</div>
+
+
 
           <div onClick={toggleCart} className="relative bag">
             {/* <img src={bag} className="w-5 cursor-pointer" alt="Cart Icon" /> */}

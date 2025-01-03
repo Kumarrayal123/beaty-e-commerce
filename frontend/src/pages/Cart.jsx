@@ -651,9 +651,14 @@ const Cart = () => {
   };
 
   const handleDecrement = (itemId, size) => {
-    const currentQuantity = cartItems[itemId]?.[size] || 0;
-    if (currentQuantity > 1) {
-      updateQuantity(itemId, size, currentQuantity - 1);
+    
+    const item = cartData.find((cartItem) => cartItem._id === itemId && cartItem.size === size);
+    if (item ) {
+      if (item.quantity > 1) {
+        updateQuantity(itemId, size, item.quantity - 1);
+      }else{
+        updateQuantity(itemId, size, 0);
+      }
     }
   };
 

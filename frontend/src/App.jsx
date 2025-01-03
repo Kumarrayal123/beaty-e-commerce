@@ -15,13 +15,18 @@ import SearchBar from "./components/SearchBar";
 import SilkSaree from "./pages/SilkSaree";
 import BestSelling from "./pages/BestSelling";
 
+import "../src/index.css"
+
 export default function App() {
+  // State to track the active status of the cart
 
   return (
     <div>
       {/* <h1>Hello, world!</h1> */}
       <Navbar/>
       <SearchBar/>
+      {/* <CartNotify /> */}
+
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/collection' element={<Collection/>}></Route>
@@ -30,6 +35,7 @@ export default function App() {
         <Route path='/product/:productId' element={<Product/>}></Route>
         {/* <Route path='/cart' element={<Cart/>}></Route> */}
         <Route path="/cart" element={<Cart />} />
+        {/* <Route path="/cart-notify" element={<CartNotify />} /> */}
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/place-order' element={<PlaceOrder/>}></Route>
         <Route path='/orders' element={<Orders/>}></Route>

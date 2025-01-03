@@ -99,6 +99,8 @@
 
 // export default Navbar;
 
+
+
 import React, { useContext, useState } from "react";
 import logo from '../assets/frontend_assets/manya_logo.png';
 import search from '../assets/frontend_assets/search_icon.png';
@@ -114,6 +116,9 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import {faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import {faBars } from '@fortawesome/free-solid-svg-icons';
+import "../pages/notify.css"
+import Title from './Title';
+
 
 
 const Navbar = () => {
@@ -130,7 +135,12 @@ const Navbar = () => {
   const handleNavLinkClick = () => {
     setVisible(false); // Close the mobile menu when a link is clicked
   };
+  const [isActive, setIsActive] = useState(false);
 
+  // Function to toggle the active state
+  const toggleCart = () => {
+    setIsActive(!isActive);
+  };
   return (
     <div className="relative navbar ">
       {/* Main Navbar */}
@@ -194,14 +204,14 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/Cart" className="relative bag">
+          <div onClick={toggleCart} className="relative bag">
             {/* <img src={bag} className="w-5 cursor-pointer" alt="Cart Icon" /> */}
             <FontAwesomeIcon className="h-5" icon={faBagShopping} />
             
             <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-white text-black aspect-square rounded-full text-[8px]">
               {getCartCount}
             </p>
-          </Link>
+          </div>
 
           {/* Mobile Menu Icon */}
           {/* <img
@@ -253,7 +263,27 @@ const Navbar = () => {
           onClick={() => setVisible(false)}
         ></div>
       )}
+
+
+
+     
+      <div className={`cart-notify ${isActive ? "active" : ""}`}>
+       <div>
+       <Title text2="SHOPING CART" />
+       </div>
+
+
+
+
+        <h2>Your Cart</h2>
+        <p>Items in your cart will appear here.</p>
+        <button onClick={toggleCart} className="close-cart">
+          x
+        </button>
+      </div>
+ 
     </div>
+    
   );
 };
 

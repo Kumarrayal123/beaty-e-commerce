@@ -414,21 +414,6 @@ const Collection = () => {
             </label>
           </div>
         </div>
-
-        {/* <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>TYPE</p>
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <label className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory} />Topwear
-            </label>
-            <label className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory} />Bottomwear
-            </label>
-            <label className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory} />Winterwear
-            </label>
-          </div>
-        </div> */}
       </div>
 
       <div className='flex-1'>
@@ -443,14 +428,7 @@ const Collection = () => {
 
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
           {filterProducts.map((item, index) => (
-            // <Link to={`/product/${item.id}`} key={index}> {/* Link to product page */}
-            //   <ProductItem
-            //     name={item.name}
-            //     id={item.id}
-            //     price={item.price}
-            //     image={item.image}
-            //   />
-            // </Link>
+            
             <Link to={`/product/${item._id}`} key={index}> {/* Use _id here instead of id */}
   <ProductItem
     name={item.name}

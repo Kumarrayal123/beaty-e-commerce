@@ -10,9 +10,9 @@ a.active hr{
 *{
   font-size: outfit;
 }
-/* body{
-  background-color: black;
-} */
+body{
+  overflow-x: hidden;
+}
 
 .prata-regular {
   font-family: "Prata", serif;
@@ -43,6 +43,9 @@ a.active hr{
 .index{
   z-index: -1;
 }
+.slow{
+  transition: 2s all ease;
+}
 .background{
   background-color:black;
 }
@@ -61,3 +64,54 @@ a.active hr{
 .bag{
   background-color:black;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-screen {
+  max-height: 500px; /* Adjust based on your content's height */
+}
+.cart-notify {
+  position: absolute;
+  right: -100%;
+  top: 0;
+  background-color: white;
+  transition: right 0.3s ease-in-out; /* Smooth slide transition */
+}
+
+.cart-notify.active {
+  right: 0;
+}
+
+.bag {
+  cursor: pointer;
+}
+
+.close-cart {
+  margin-top: 10px;
+  background-color: #f00;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+

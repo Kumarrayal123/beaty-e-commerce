@@ -269,7 +269,7 @@ const Navbar = () => {
      
       <div className={`cart-notify ${isActive ? "active" : ""}`}>
        <div>
-       <Title text2="SHOPING CART" />
+       <Title text2="SHOPING" />
        </div>
 
 

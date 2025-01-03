@@ -305,6 +305,8 @@ const LatestCollection = () => {
   const [latestProducts, setLatestProducts] = useState([]);
   const navigate = useNavigate(); // Initialize navigate
 
+  
+
   useEffect(() => {
     setLatestProducts(products.slice(0, 10)); // Get the latest 10 products
   }, [products]);
@@ -318,12 +320,13 @@ const LatestCollection = () => {
   const handleImageClick = (productId) => {
     navigate(`/product/${productId}`); // Navigate to the product page with product ID
   };
+  
 
   return (
     <div className="my-10">
       {/* Latest Products Section */}
       <div className="text-center py-8 text-3xl">
-        <Title text1="LATEST" text2="COLLECTIONS" />
+        <Title text2="LATEST COLLECTIONS"/>
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
           Wrap yourself in the unmatched luxury of our latest soft silk saree collection
         </p>
@@ -347,9 +350,9 @@ const LatestCollection = () => {
 
               {/* Add to Cart Button on Top of Image */}
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-full group-hover:translate-y-0 duration-500 ease-in-out">
-  <button
+  <button 
     onClick={() => handleAddToCart(product)} // Use the handleAddToCart function
-    className="px-2 py-1 text-sm bg-white text-black font-semibold rounded-lg hover:bg-gray-300 sm:px-3 sm:py-2 sm:text-base transition-colors duration-300 ease-in-out"
+    className="px-2 py-1 text-sm bg-white text-black font-semibold rounded-lg hover:bg-gray-300 sm:px-3 sm:py-2 sm:text-base transition-colors duration-300 ease-in-out margin-right-auto"
   >
     Add to Cart
   </button>

@@ -365,7 +365,6 @@ const Navbar = () => {
     setToken("");
     setCartItems({});
   };
-
   const toggleCart = () => {
     navigate("/cart"); // Navigate to cart page when clicked
   };

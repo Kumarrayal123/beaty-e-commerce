@@ -2,8 +2,8 @@ import { Routes,Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
-import About from "./pages/SilkSaree";
-import Contact from "./pages/BestSelling";
+import About from "./pages/PureSilkSaree";
+import Contact from "./pages/Kurtis";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
@@ -12,10 +12,12 @@ import Orders from "./pages/Orders";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
-import SilkSaree from "./pages/SilkSaree";
-import BestSelling from "./pages/BestSelling";
+import SilkSaree from "./pages/PureSilkSaree";
+import BestSelling from "./pages/Kurtis";
 
 import "../src/index.css"
+import PureSilkSaree from "./pages/PureSilkSaree";
+import Kurtis from "./pages/Kurtis";
 
 export default function App() {
   // State to track the active status of the cart
@@ -30,8 +32,8 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/collection' element={<Collection/>}></Route>
-        <Route path='/silksaree' element={<SilkSaree/>}></Route>
-        <Route path='/bestselling' element={<BestSelling/>}></Route>
+        <Route path='/puresilksaree' element={<PureSilkSaree/>}></Route>
+        <Route path='/kurtis' element={<Kurtis/>}></Route>
         <Route path='/product/:productId' element={<Product/>}></Route>
         {/* <Route path='/cart' element={<Cart/>}></Route> */}
         <Route path="/cart" element={<Cart />} />

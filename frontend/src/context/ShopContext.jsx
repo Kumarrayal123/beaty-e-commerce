@@ -142,6 +142,7 @@ import { products } from '../assets/frontend_assets/assets'; // Ensure this path
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { silkproduct } from '../assets/frontend_assets/assets';
 
 export const ShopContext = createContext();
 
@@ -244,6 +245,7 @@ const ShopContextProvider = (props) => {
   // Context value to be shared
   const value = {
     products,
+    silkproduct,
     currency,
     delivery_fee,
     search,

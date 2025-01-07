@@ -350,12 +350,7 @@ const LatestCollection = () => {
 
               {/* Add to Cart Button on Top of Image */}
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-full group-hover:translate-y-0 duration-500 ease-in-out">
-  <button 
-    onClick={() => handleAddToCart(product)} // Use the handleAddToCart function
-    className="px-2 py-1 text-sm bg-white text-black font-semibold rounded-lg hover:bg-gray-300 sm:px-3 sm:py-2 sm:text-base transition-colors duration-300 ease-in-out margin-right-auto"
-  >
-    Add to Cart
-  </button>
+  
 </div>
 
               
@@ -365,8 +360,6 @@ const LatestCollection = () => {
             <div className="text-center py-4">
               <p className="text-lg font-semibold text-gray-800">{product.name}</p>
               <p className="text-md text-gray-600">{currency} {product.price}</p>
-              {/* <span className="line-through text-gray-400">{currency} {product.Price}</span>{' '} */}
-  {/* <span className="text-red-600 font-bold">{currency} {product.Price}</span> */}
             </div>
           </div>
         ))}

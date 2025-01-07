@@ -1,97 +1,155 @@
 
 
 
+
+
+
 // import React, { useContext, useState } from "react";
-// import logo from '../assets/frontend_assets/logo.png';
-// import search from '../assets/frontend_assets/search_icon.png';
-// import user from '../assets/frontend_assets/profile_icon.png';
-// import bag from '../assets/frontend_assets/cart_icon.png';
-// import menu from '../assets/frontend_assets/menu_icon.png';
-// import { Link, NavLink } from 'react-router-dom';
+// import logo from "../assets/frontend_assets/manya_logo.png";
+// import { Link, NavLink } from "react-router-dom";
 // import { ShopContext } from "../context/ShopContext";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faMagnifyingGlass, faUser, faBagShopping} from "@fortawesome/free-solid-svg-icons";
+// import "../pages/notify.css";
+
 
 // const Navbar = () => {
-//   const [visible, setVisible] = useState(false);
-//   const { setShowSearch, getCartCount,navigate,token,setToken, setCartItems } = useContext(ShopContext);
+//   const [isActive, setIsActive] = useState(false);
+//   const {
+//     setShowSearch,
+//     getCartCount,
+//     navigate,
+//     token,
+//     setToken,
+//     setCartItems,
+//   } = useContext(ShopContext);
 
-//   const logout = () =>{
-//     navigate('/login')
-//     localStorage.removeItem('token')
-//     setToken('')
-//     setCartItems({})
+//   const logout = () => {
+//     navigate("/login");
+//     localStorage.removeItem("token");
+//     setToken("");
+//     setCartItems({});
+//   };
 
-    
-//   }
-
-//   const handleNavLinkClick = () => {
-//     setVisible(false); // Close the mobile menu when a link is clicked
+//   const toggleCart = () => {
+//     setIsActive(!isActive);
 //   };
 
 //   return (
-//     <div className="flex items-center justify-between py-5 px-10 font-medium">
-//       <Link to={'/'}>
-//         <img src={logo} className="w-36" alt="Logo" />
-//       </Link>
-
-//       <ul className="hidden sm:flex gap-10 text-sm text-gray-700">
-//         <NavLink to='/' className='flex flex-col item-center gap-1'>
-//           <p>HOME</p>
-//           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
-//         </NavLink>
-//         <NavLink to='/Collection' className='flex flex-col item-center gap-1'>
-//           <p>COLLECTION</p>
-//           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
-//         </NavLink>
-//         <NavLink to='/SilkSaree' className='flex flex-col item-center gap-1'>
-//           <p>SILK SAREE</p>
-//           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
-//         </NavLink>
-//         <NavLink to='/BestSelling' className='flex flex-col item-center gap-1'>
-//           <p>BEST SELLING</p>
-//           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
-//         </NavLink>
-//       </ul>
-
-//       <div className="flex items-center gap-6">
-//         <img onClick={() => setShowSearch(true)} src={search} className="w-5 cursor-pointer" alt="Search Icon" />
-
-//         <div className="group relative">
-//          <img onClick={()=>token ? null : navigate('login')} src={user} className="w-5 cursor-pointer" alt="User Icon" />
-//           {token && 
-//           <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
-//             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-//               <p className="cursor-pointer hover:text-black">My Profile</p>
-//               <p onClick={()=>navigate('/orders')} className="cursor-pointer hover:text-black">Orders</p>
-//               <p  onClick={logout}  className="cursor-pointer hover:text-black">Logout</p>
-//             </div>
-//           </div>}
-//         </div>
-
-//         <Link to='/Cart' className="relative">
-//           <img src={bag} className="w-5 cursor-pointer" alt="Cart Icon" />
-         
-//           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
-//             {getCartCount}
-//           </p>
+//     <div className="relative navbar">
+//       {/* Main Navbar */}
+//       <div className="flex items-center justify-between py-5 px-6 sm:px-10 font-medium">
+//         <Link to="/">
+//           <img
+//             src={logo}
+//             className="w-20 h-auto bg-black shadow-md hover:scale-105 transition-transform"
+//             alt="Logo"
+//           />
 //         </Link>
 
-//         <img onClick={() => setVisible(true)} src={menu} className="w-5 cursor-pointer sm:hidden" alt="Menu Icon" />
-//       </div>
-
-//       {/* Side Menu */}
-//       <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
-//         <div className="flex flex-col text-gray-600">
-//           <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
-//             <img className="h-4 rotate-180" src={menu} alt="Back" />
-//             <p>Back</p>
+//         {/* All Category Dropdown */}
+//         <div
+//           className="relative group"
+//           onMouseEnter={() => setIsActive(true)}
+//           onMouseLeave={() => setIsActive(false)}
+//         >
+//           <button className="text-sm font-medium py-2 px-4 rounded text-white-700">
+//           All Categories
+//           </button>
+//           <div
+//             className={`absolute top-6 left-0 mt-2 bg-white shadow-md rounded w-48  ${
+//               isActive ? "block" : "hidden"
+//             }`}
+//           >
+//             <ul className="flex flex-col text-gray-700 hover:text-black ">
+//               {[
+//                 { path: "/pattu", label: "Pattu" },
+//                 { path: "/banarasi-sarees", label: "Banarasi Sarees" },
+//                 {path:"/Hand-Loom",label:"Hand Loom"},
+//                 {path:"/pettu-badi saree",label:" Pettu badi sarees"},
+//                 {path:"/organza-saree",label:"Organza saree"},
+//                 { path: "/chanderi-sarees", label: "Chanderi sarees" },
+//                 { path: "/kanchi-silk", label: "Kanchi Silk" },
+//                 { path: "/semi-pattu", label: "Semi pattu" },
+//                 { path: "/fancy ", label: "Fancy" },
+//               ].map(({ path, label }) => (
+//                 <li key={path} className="px-4 py-2 hover:bg-gray-100">
+//                   <NavLink to={path}>{label}</NavLink>
+//                 </li>
+//               ))}
+//             </ul>
 //           </div>
-//           {/* Update NavLinks to include click handler */}
-//           {[{ path: '/', label: 'Home' }, { path: '/Collection', label: 'COLLECTION' }, { path: '/About', label: 'ABOUT' }, { path: '/Contact', label: 'CONTACT' }].map(({ path, label }) => (
-//             <NavLink key={path} to={path} onClick={handleNavLinkClick} className='py-2 pl-6 border'>
-//               {label}
+//         </div>
+
+//         {/* Desktop Menu */}
+//         <ul className="hidden sm:flex gap-10 text-sm text-white-700">
+//           {[
+//             { path: "/", label: "HOME" },
+//             { path: "/Collection", label: "COLLECTION" },
+//             { path: "/PureSilkSaree", label: " PURE SILK SAREE" },
+//             { path: "/Kurtis", label: "KURTIS" },
+//           ].map(({ path, label }) => (
+//             <NavLink key={path} to={path} className="flex flex-col items-center gap-1">
+//               <p>{label}</p>
+//               <hr className="w-2/4 border-none h-[2px] bg-gray-700 hidden" />
 //             </NavLink>
 //           ))}
+//         </ul>
+
+//         {/* Icons Section */}
+//         <div className="flex items-center gap-4 bg-white search">
+//           <FontAwesomeIcon
+//             className="w-5 cursor-pointer h-10"
+//             icon={faMagnifyingGlass}
+//             onClick={() => setShowSearch(true)}
+//           />
+
+//           {/* User Dropdown */}
+//           <div className="group relative">
+//             <FontAwesomeIcon
+//               className="h-5 cursor-pointer"
+//               icon={faUser}
+//               onClick={() => !token && navigate("login")}
+//             />
+
+//             {token && (
+//               <div className="hidden group-hover:block absolute top-4 right-0 mt-2 bg-slate-100 dropdown-menu text-gray-500 rounded shadow-lg">
+//                 <div className="flex flex-col gap-2 w-36 py-3 px-5">
+//                   <p className="cursor-pointer hover:text-black" onClick={() => navigate("/profile")}>
+//                     My Profile
+//                   </p>
+//                   <p className="cursor-pointer hover:text-black" onClick={() => navigate("/orders")}>
+//                     Orders
+//                   </p>
+//                   <p className="cursor-pointer hover:text-black" onClick={logout}>
+//                     Logout
+//                   </p>
+//                 </div>
+//               </div>
+//             )}
+//           </div>
+
+//           <div onClick={toggleCart} className="relative bag">
+//             <FontAwesomeIcon className="h-5" icon={faBagShopping} />
+//             <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-white text-black aspect-square rounded-full text-[8px]">
+//               {getCartCount}
+//             </p>
+//           </div>
 //         </div>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <div className="sm:hidden flex justify-around bg-black-200 py-2">
+//         {[
+//           { path: "/", label: "HOME" },
+//           { path: "/Collection", label: "COLLECTION" },
+//           { path: "/PureSilkSaree", label: " PURE SILK SAREE" },
+//           { path: "/Kurtis", label: "KURTIS" },
+//         ].map(({ path, label }) => (
+//           <NavLink key={path} to={path} className="text-sm font-medium">
+//             {label}
+//           </NavLink>
+//         ))}
 //       </div>
 //     </div>
 //   );
@@ -100,68 +158,285 @@
 // export default Navbar;
 
 
+// import React, { useContext, useState } from "react";
+// import logo from "../assets/frontend_assets/manya_logo.png";
+// import { Link, NavLink } from "react-router-dom";
+// import { ShopContext } from "../context/ShopContext";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faMagnifyingGlass, faUser, faBagShopping } from "@fortawesome/free-solid-svg-icons";
+// import "../pages/notify.css";
 
+
+// const Navbar = () => {
+  
+//   const [isActive, setIsActive] = useState(false);
+//   const [isPattuActive, setIsPattuActive] = useState(false); // State for handling the hover effect of "Pattu"
+
+//   const {
+//     setShowSearch,
+//     getCartCount,
+//     navigate,
+//     token,
+//     setToken,
+//     setCartItems,
+//   } = useContext(ShopContext);
+
+//   const logout = () => {
+//     navigate("/login");
+//     localStorage.removeItem("token");
+//     setToken("");
+//     setCartItems({});
+//   };
+
+//   const toggleCart = () => {
+//     setIsActive(!isActive);
+//   };
+
+//   return (
+//     <div className="relative navbar">
+//       {/* Main Navbar */}
+//       <div className="flex items-center justify-between py-5 px-6 sm:px-10 font-medium">
+//         <Link to="/">
+//           <img
+//             src={logo}
+//             className="w-20 h-auto bg-black shadow-md hover:scale-105 transition-transform"
+//             alt="Logo"
+//           />
+//         </Link>
+
+//         {/* All Category Dropdown */}
+//         <div
+//           className="relative group"
+//           onMouseEnter={() => setIsActive(true)}
+//           onMouseLeave={() => setIsActive(false)}
+//         >
+//           <button className="text-sm font-medium py-2 px-4 rounded text-white-700 size-15">
+//          All CATEGORIES
+//           </button>
+//           <div
+//             className={`absolute top-4 left-0 mt-2 bg-white shadow-md rounded w-48  ${isActive ? "block" : "hidden"
+//               }`}
+//           >
+//             <ul className="flex flex-col text-gray-500  hover:text-black ">
+//               {[{ path: "/pattu", label: "Pattu" }].map(({ path, label }) => (
+//                 <li
+//                   key={path}
+//                   className="px-4 py-2 tex-gray-500 hover:text-black  relative"
+//                   onMouseEnter={() => setIsPattuActive(true)}
+//                   onMouseLeave={() => setIsPattuActive(false)}
+//                 >
+//                   <NavLink to={path}>{label}</NavLink>
+//                   {/* Subcategories for Pattu */}
+//                   {isPattuActive && (
+
+//                     <div className="absolute left-48 top-1 mt-2 text-gray-500 hover:text-black bg-white shadow-md rounded w-48">
+//                       <ul className="flex flex-col">
+//                         <li className="px-4 py-2 text-gray-500 hover:text-black">
+//                           <NavLink to="/kanjeevaram">Kanjeevaram</NavLink>
+//                         </li>
+//                         <li className="px-4 py-2 text-gray-500 hover:text-black">
+//                           <NavLink to="/venkatagiri">Venkatagiri</NavLink>
+//                         </li>
+//                         <li className="px-4 py-2 text-gray-500 hover:text-black">
+//                           <NavLink to="/patola">Patola</NavLink>
+//                         </li>
+//                       </ul>
+//                     </div>
+
+//                   )}
+//                 </li>
+//               ))}
+
+//               {[
+//                 { path: "/banarasi-sarees", label: "Banarasi Sarees" },
+//                 { path: "/Hand-Loom", label: "Hand Loom" },
+//                 { path: "/pettu-badi-saree", label: "Pettu Badi Sarees" },
+//                 { path: "/organza-saree", label: "Organza Saree" },
+//                 { path: "/chanderi-sarees", label: "Chanderi Sarees" },
+//                 { path: "/kanchi-silk", label: "Kanchi Silk" },
+//                 { path: "/semi-pattu", label: "Semi Pattu" },
+//                 { path: "/fancy", label: "Fancy" },
+//               ].map(({ path, label }) => (
+//                 <li key={path} className="px-4 py-2 text-gray-500 hover:text-black">
+//                   <NavLink to={path}>{label}</NavLink>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+
+//         {/* Desktop Menu */}
+//         <ul className="hidden sm:flex gap-10 text-sm text-white-700">
+//           {[
+//             { path: "/", label: "HOME" },
+//             { path: "/Collection", label: "COLLECTION" },
+//             { path: "/PureSilkSaree", label: "PURE SILK SAREE" },
+//             { path: "/Kurtis", label: "KURTIS" },
+//           ].map(({ path, label }) => (
+//             <NavLink key={path} to={path} className="flex flex-col items-center gap-1">
+//               <p>{label}</p>
+//               <hr className="w-2/4 border-none h-[2px] bg-gray-700 hidden" />
+//             </NavLink>
+//           ))}
+//         </ul>
+
+//         {/* Icons Section */}
+//         <div className="flex items-center gap-4 bg-white search">
+//           <FontAwesomeIcon
+//             className="w-5 cursor-pointer h-10"
+//             icon={faMagnifyingGlass}
+//             onClick={() => setShowSearch(true)}
+//           />
+//           <div className="group relative">
+//             <FontAwesomeIcon
+//               className="h-5 cursor-pointer"
+//               icon={faUser}
+//               onClick={() => !token && navigate("login")}
+//             />
+//             {token && (
+//               <div className="hidden group-hover:block absolute top-4 right-0 mt-2 bg-slate-100 dropdown-menu text-gray-500 rounded shadow-lg">
+//                 <div className="flex flex-col gap-2 w-36 py-3 px-5">
+//                   <p className="cursor-pointer hover:text-black" onClick={() => navigate("/profile")}>
+//                     My Profile
+//                   </p>
+//                   <p className="cursor-pointer hover:text-black" onClick={() => navigate("/orders")}>
+//                     Orders
+//                   </p>
+//                   <p className="cursor-pointer hover:text-black" onClick={logout}>
+//                     Logout
+//                   </p>
+//                 </div>
+//               </div>
+//             )}
+//           </div>
+
+//           <div onClick={toggleCart} className="relative bag">
+//             <FontAwesomeIcon className="h-5" icon={faBagShopping} />
+//             <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-white text-black aspect-square rounded-full text-[8px]">
+//               {getCartCount}
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <div className="sm:hidden flex justify-around bg-black-200 py-2">
+//         {[
+//           { path: "/", label: "HOME" },
+//           { path: "/Collection", label: "COLLECTION" },
+//           { path: "/PureSilkSaree", label: "PURE SILK SAREE" },
+//           { path: "/Kurtis", label: "KURTIS" },
+//         ].map(({ path, label }) => (
+//           <NavLink key={path} to={path} className="text-sm font-medium">
+//             {label}
+//           </NavLink>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
 import React, { useContext, useState } from "react";
-import logo from '../assets/frontend_assets/manya_logo.png';
-import search from '../assets/frontend_assets/search_icon.png';
- import user from '../assets/frontend_assets/profile_icon.png';
-import bag from '../assets/frontend_assets/cart_icon.png';
-import menu from '../assets/frontend_assets/menu_icon.png';
-import { Link, NavLink } from 'react-router-dom';
+import logo from "../assets/frontend_assets/manya_logo.png";
+import { Link, NavLink, useNavigate } from "react-router-dom"; // Import useNavigate
 import { ShopContext } from "../context/ShopContext";
-// import AccountCircleIcon from '../assets/frontend_assets/assets';
-// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import {faBagShopping } from '@fortawesome/free-solid-svg-icons';
-import {faBars } from '@fortawesome/free-solid-svg-icons';
-import "../pages/notify.css"
-import Title from './Title';
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faUser, faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import "../pages/notify.css";
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  const [isActive, setIsActive] = useState(false);
+  const [isPattuActive, setIsPattuActive] = useState(false); // State for handling the hover effect of "Pattu"
+
+  const {
+    setShowSearch,
+    getCartCount,
+    token,
+    setToken,
+    setCartItems,
+  } = useContext(ShopContext);
 
   const logout = () => {
-    navigate('/login');
-    localStorage.removeItem('token');
-    setToken('');
+    navigate("/login");
+    localStorage.removeItem("token");
+    setToken("");
     setCartItems({});
   };
 
-  const handleNavLinkClick = () => {
-    setVisible(false); // Close the mobile menu when a link is clicked
-  };
-  const [isActive, setIsActive] = useState(false);
-
-  // Function to toggle the active state
   const toggleCart = () => {
-    setIsActive(!isActive);
+    navigate("/cart"); // Navigate to cart page when clicked
   };
+
+  const handleUserClick = () => {
+    if (token) {
+      navigate("/profile"); // Navigate to profile page if logged in
+    } else {
+      navigate("/login"); // Navigate to login page if not logged in
+    }
+  };
+
   return (
-    <div className="relative navbar ">
+    <div className="relative navbar">
       {/* Main Navbar */}
-      <div className="flex items-center justify-between py-5 px-6 sm:px-10 font-medium ">
-        <Link to={'/'}>
-          {/* <img src={logo} className="w-20 bg-black" alt="Logo" /> */}
-          <img 
-        src={logo} 
-        className="w-20 h-auto bg-black shadow-md hover:scale-105 transition-transform"
-        alt="Logo" 
-      />
+      <div className="flex items-center justify-between py-5 px-6 sm:px-10 font-medium">
+        <Link to="/">
+          <img
+            src={logo}
+            className="w-20 h-auto bg-black shadow-md hover:scale-105 transition-transform"
+            alt="Logo"
+          />
         </Link>
+
+        {/* All Category Dropdown */}
+        <div
+          className="relative group"
+          onMouseEnter={() => setIsActive(true)}
+          onMouseLeave={() => setIsActive(false)}
+        >
+          <button className="text-sm font-medium py-2 px-4 rounded text-white-700 size-15">
+            All CATEGORIES
+          </button>
+          <div
+            className={`absolute top-5 left-0 mt-2 bg-white shadow-md rounded w-48  ${isActive ? "block" : "hidden"
+              }`}
+          >
+            <ul className="flex flex-col text-gray-500  hover:text-black ">
+              {[{ path: "/pattu", label: "Pattu" }].map(({ path, label }) => (
+                <li
+                  key={path}
+                  className="px-4 py-2 tex-gray-500 hover:text-black  relative"
+                  onMouseEnter={() => setIsPattuActive(true)}
+                  onMouseLeave={() => setIsPattuActive(false)}
+                >
+                  <NavLink to={path}>{label}</NavLink>
+                  {/* Subcategories for Pattu */}
+                </li>
+              ))}
+
+              {[ 
+                { path: "/banarasi-sarees", label: "Banarasi Sarees" },
+                { path: "/Hand-Loom", label: "Hand Loom" },
+                { path: "/pettu-badi-saree", label: "Pettu Badi Sarees" },
+                { path: "/organza-saree", label: "Organza Saree" },
+                { path: "/chanderi-sarees", label: "Chanderi Sarees" },
+                { path: "/kanchi-silk", label: "Kanchi Silk" },
+                { path: "/semi-pattu", label: "Semi Pattu" },
+                { path: "/fancy", label: "Fancy" },
+              ].map(({ path, label }) => (
+                <li key={path} className="px-4 py-2 text-gray-500 hover:text-black">
+                  <NavLink to={path}>{label}</NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         {/* Desktop Menu */}
         <ul className="hidden sm:flex gap-10 text-sm text-white-700">
-          {[
-            { path: '/', label: 'HOME' },
-            { path: '/Collection', label: 'COLLECTION' },
-            { path: '/SilkSaree', label: 'SILK SAREE' },
-            { path: '/BestSelling', label: 'BEST SELLING' },
-          ].map(({ path, label }) => (
+          {[{ path: "/", label: "HOME" }, { path: "/Collection", label: "COLLECTION" }, { path: "/PureSilkSaree", label: "PURE SILK SAREE" }, { path: "/Kurtis", label: "KURTIS" }].map(({ path, label }) => (
             <NavLink key={path} to={path} className="flex flex-col items-center gap-1">
               <p>{label}</p>
               <hr className="w-2/4 border-none h-[2px] bg-gray-700 hidden" />
@@ -170,33 +445,29 @@ const Navbar = () => {
         </ul>
 
         {/* Icons Section */}
-        <div className="flex items-center gap-4 bg-white  search">
-          {/* <img
+        <div className="flex items-center gap-4 bg-white search">
+          <FontAwesomeIcon
+            className="w-5 cursor-pointer h-10"
+            icon={faMagnifyingGlass}
             onClick={() => setShowSearch(true)}
+          />
+          <div className="group relative">
+            <FontAwesomeIcon
+              className="h-5 cursor-pointer"
+              icon={faUser}
+              onClick={() => !token && navigate("login")} // Navigate to login or profile on user icon click
+            />
             
-            
-            className="w-5 cursor-pointer"
-            alt="Search Icon"
-          /> */}
-<FontAwesomeIcon className="w-5 cursor-pointer h-10" icon={faMagnifyingGlass} onClick={() => setShowSearch(true)} />
-
-          <div className="group relative user">
-            {/* <img
-              onClick={() => (token ? null : navigate('login'))}
-              src={user}
-              className="w-5 cursor-pointer"
-              alt="User Icon"
-            /> */}
-            <FontAwesomeIcon className="h-5" icon={faUser} />
-            {/* <AccountCircleIcon className="w-5 cursor-pointer" onClick={() => (token ? null : navigate('login'))} /> */}
-            {token && (
-              <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
-                <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                  <p className="cursor-pointer hover:text-black">My Profile</p>
-                  <p onClick={() => navigate('/orders')} className="cursor-pointer hover:text-black">
+            {token &&  (
+              <div className="hidden group-hover:block absolute top-4 right-0 mt-2 bg-slate-100 dropdown-menu text-gray-500 rounded shadow-lg">
+                <div className="flex flex-col gap-2 w-36 py-3 px-5">
+                  <p className="cursor-pointer hover:text-black" onClick={() => navigate("/profile")}>
+                    My Profile
+                  </p>
+                  <p className="cursor-pointer hover:text-black" onClick={() => navigate("/orders")}>
                     Orders
                   </p>
-                  <p onClick={logout} className="cursor-pointer hover:text-black">
+                  <p className="cursor-pointer hover:text-black" onClick={logout}>
                     Logout
                   </p>
                 </div>
@@ -205,85 +476,23 @@ const Navbar = () => {
           </div>
 
           <div onClick={toggleCart} className="relative bag">
-            {/* <img src={bag} className="w-5 cursor-pointer" alt="Cart Icon" /> */}
-            <FontAwesomeIcon className="h-5" icon={faBagShopping} />
-            
+            <FontAwesomeIcon className="h-5 cursor-pointer" icon={faBagShopping} onClick={toggleCart} />
             <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-white text-black aspect-square rounded-full text-[8px]">
               {getCartCount}
             </p>
           </div>
-
-          {/* Mobile Menu Icon */}
-          {/* <img
-            onClick={() => setVisible(!visible)}
-            src={menu}
-            className="w-5 cursor-pointer sm:hidden"
-            alt="Menu Icon"
-          /> */}
-          <FontAwesomeIcon className="w-5 cursor-pointer sm:hidden h-5" icon={faBars} onClick={() => setVisible(!visible)} />
         </div>
       </div>
 
-      {/* Side Menu for Mobile */}
-      <div
-        className={`fixed top-0 right-0 bottom-0 z-50 bg-white transition-transform transform ${
-          visible ? 'translate-x-0' : 'translate-x-full'
-        } w-4/5 sm:w-1/3 shadow-lg`}
-      >
-        <div className="flex flex-col h-full">
-          <div
-            onClick={() => setVisible(false)}
-            className="flex items-center gap-4 p-4 cursor-pointer text-gray-600"
-          >
-            <img className="h-4 rotate-180" src={menu} alt="Close" />
-            <p>Close</p>
-          </div>
-          {[
-            { path: '/', label: 'HOME' },
-            { path: '/Collection', label: 'COLLECTION' },
-            { path: '/SilkSaree', label: 'SILK SAREE' },
-            { path: '/BestSelling', label: 'BEST SELLING' },
-          ].map(({ path, label }) => (
-            <NavLink
-              key={path}
-              to={path}
-              onClick={handleNavLinkClick}
-              className="py-3 px-6 text-gray-700 border-b hover:bg-gray-100"
-            >
-              {label}
-            </NavLink>
-          ))}
-        </div>
+      {/* Mobile Menu */}
+      <div className="sm:hidden flex justify-around bg-black-200 py-2">
+        {[{ path: "/", label: "HOME" }, { path: "/Collection", label: "COLLECTION" }, { path: "/PureSilkSaree", label: "PURE SILK SAREE" }, { path: "/Kurtis", label: "KURTIS" }].map(({ path, label }) => (
+          <NavLink key={path} to={path} className="text-sm font-medium">
+            {label}
+          </NavLink>
+        ))}
       </div>
-
-      {/* Background overlay for mobile menu */}
-      {visible && (
-        <div
-          className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40"
-          onClick={() => setVisible(false)}
-        ></div>
-      )}
-
-
-
-     
-      <div className={`cart-notify ${isActive ? "active" : ""}`}>
-       <div>
-       <Title text2="SHOPING" />
-       </div>
-
-
-
-
-        <h2>Your Cart</h2>
-        <p>Items in your cart will appear here.</p>
-        <button onClick={toggleCart} className="close-cart">
-          x
-        </button>
-      </div>
- 
     </div>
-    
   );
 };
 

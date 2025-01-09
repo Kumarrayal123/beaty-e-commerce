@@ -50,6 +50,8 @@ import p_img49 from './p_img49.png'
 import p_img50 from './p_img50.png'
 import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
+import N_img1 from './N_img1.jpg'
+import N_img2 from './N_img2.jpg'
 
 
 
@@ -108,7 +110,7 @@ export const products = [
         price: 5999,
         image: [p_img1,],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         // sizes: ["S", "M", "L"],
         colors: ["red", "blue", "green"],
         date: 1716634345448,
@@ -121,7 +123,7 @@ export const products = [
         price: 6999,
         image: [p_img2],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         // sizes: ["M", "L", "XL"],
         date: 1716621345448,
         bestseller: true
@@ -133,7 +135,7 @@ export const products = [
         price: 6999,
         image: [p_img3],
         category: "Kids",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         sizes: ["S", "L", "XL"],
         date: 1716234545448,
         bestseller: true
@@ -145,7 +147,7 @@ export const products = [
         price: 6990,
         image: [p_img4],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         sizes: ["S", "M", "XXL"],
         date: 1716621345448,
         bestseller: true
@@ -157,7 +159,7 @@ export const products = [
         price: 6990,
         image: [p_img5],
         category: "Women",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         sizes: ["M", "L", "XL"],
         date: 1716622345448,
         bestseller: true
@@ -169,7 +171,7 @@ export const products = [
         price: 6999,
         image: [p_img6],
         category: "Kids",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         sizes: ["S", "L", "XL"],
         date: 1716623423448,
         bestseller: true
@@ -193,7 +195,7 @@ export const products = [
         price: 9999,
         image: [p_img8],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         sizes: ["S", "M", "L", "XL"],
         date: 1716622345448,
         bestseller: false
@@ -205,7 +207,7 @@ export const products = [
         price: 9999,
         image: [p_img9],
         category: "Kids",
-        subCategory: "Topwear",
+        subCategory: "SILK",
         sizes: ["M", "L", "XL"],
         date: 1716621235448,
         bestseller: false
@@ -732,71 +734,158 @@ export const products = [
 
 export const silkproduct =[
     {
-        _id: "aaaby",
-        name: "Women Zip-Front Relaxed Fit Jacket",
-        description: "lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 320,
-        image: [p_img51],
+        _id: "pur-silk",
+        name: "Dark Aura Silk Tissue Saree",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 1000,
+        image: [p_img1,],
         category: "Women",
-        subCategory: "Winterwear",
-        
-        date: 1716667345448,
-        bestseller: false
+        colors: ["red", "blue", "green"],
+        date: 1716634345448,
+       
     },
     {
-        _id: "aaaby",
-        name: "Women Zip-Front Relaxed Fit Jacket",
-        description: "B lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 320,
-        image: [p_img51],
-        category: "Women",
-        subCategory: "Winterwear",
+        _id: "aaab",
+        name: "High Spirits Silver Tissue Silk Saree",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 6999,
+        image: [p_img2],
+        category: "Men",
+        subCategory: "Topwear",
+        // sizes: ["M", "L", "XL"],
+        date: 1716621345448,
+        bestseller: true
+    },
+    {
+        _id: "aaac",
+        name: "Dear Divine Silver Tissue Silk Saree",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 6999,
+        image: [p_img3],
+        category: "Kids",
+        subCategory: "Topwear",
+        date: 1716234545448,
         
-        date: 1716667345448,
-        bestseller: false
-    },{
-        _id: "aaaby",
-        name: "Women Zip-Front Relaxed Fit Jacket",
+    },
+    {
+        _id: "aaad",
+        name: "Srimukha Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 320,
-        image: [p_img51],
-        category: "Women",
-        subCategory: "Winterwear",
-      
-        date: 1716667345448,
-      
-    },{
-        _id: "aaaby",
-        name: "Women Zip-Front Relaxed Fit Jacket",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 320,
-        image: [p_img51],
-        category: "Women",
-        subCategory: "Winterwear",
+        price: 6990,
+        image: [p_img4],
+        category: "Men",
+        subCategory: "Topwear",
+        date: 1716621345448,
        
-        date: 1716667345448,
-        bestseller: false
-    },{
-        _id: "aaaby",
-        name: "Women Zip-Front Relaxed Fit Jacket",
+    },
+    {
+        _id: "aaae",
+        name: "Soul Root Silver Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 320,
-        image: [p_img51],
+        price: 6990,
+        image: [p_img5],
         category: "Women",
-        subCategory: "Winterwear",
-       
-        date: 1716667345448,
-       
-    },{
-        _id: "aaaby",
-        name: "Women Zip-Front Relaxed Fit Jacket",
+        subCategory: "Topwear",
+        date: 1716622345448,
+     
+    },
+    {
+        _id: "aaaf",
+        name: "Sukla Tissue Silk Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 320,
-        image: [p_img51],
-        category: "Women",
-        subCategory: "Winterwear",
-        date: 1716667345448,
-        bestseller: false
+        price: 6999,
+        image: [p_img6],
+        category: "Kids",
+        subCategory: "Topwear",
+        date: 1716623423448,
+       
+    },
+    {
+        _id: "aaag",
+        name: "Subakrithu Tissue Silk Saree",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+        price: 6990,
+        image: [p_img7],
+        category: "Men",
+        subCategory: "Bottomwear",
+        date: 1716621542448,
+       
     }
+   
 ]
 
+export const Nightwear =[
+    {
+        _id: "ELLITI Women Pajama Set",
+        name: "ELLITI Women Pajama Set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img1],
+        category: "Women",
+        // colors: ["red", "blue", "green"],
+        date: 1716634345448,
+
+    },
+    {
+        _id: "Mockup of a pajama set",
+        name: "Mockup of a pajama set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img2],
+        category: "Women",
+        // colors: ["red", "blue", "green"],
+        date: 1716634345448,
+
+    },
+    {
+        _id: "ELLITI Women Pajama Set",
+        name: "ELLITI Women Pajama Set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img1],
+        category: "Women",
+        date: 1716634345448,
+
+    },{
+        _id: "Mockup of a pajama set",
+        name: "Mockup of a pajama set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img2],
+        category: "Women",
+        date: 1716634345448,
+        
+    },{
+        _id: "ELLITI Women Pajama Set",
+        name: "ELLITI Women Pajama Set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img1],
+        category: "Women",
+        date: 1716634345448,
+    },{
+        _id: "Mockup of a pajama set",
+        name: "Mockup of a pajama set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img2],
+        category: "Women",
+        date: 1716634345448,
+    },{
+        _id: "ELLITI Women Pajama Set",
+        name: "ELLITI Women Pajama Set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img1],
+        category: "Women",
+        date: 1716634345448,
+    },{
+        _id: "Mockup of a pajama set",
+        name: "Mockup of a pajama set",
+        description: "SIRIL Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [N_img2],
+        category: "Women",
+        date: 1716634345448,
+    }
+]

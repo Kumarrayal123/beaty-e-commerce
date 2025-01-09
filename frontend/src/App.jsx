@@ -1,7 +1,7 @@
 import { Routes,Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Collection from "./pages/Collection";
+// import Collection from "./pages/Collection";
 import About from "./pages/PureSilkSaree";
 import Contact from "./pages/Kurtis";
 import Product from "./pages/Product";
@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
 import SilkSaree from "./pages/PureSilkSaree";
 import BestSelling from "./pages/Kurtis";
+import NightWear from "./pages/NightWear";
 
 import "../src/index.css"
 import PureSilkSaree from "./pages/PureSilkSaree";
@@ -31,7 +32,8 @@ export default function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/collection' element={<Collection/>}></Route>
+        {/* <Route path='/collection' element={<Collection/>}></Route> */}
+         <Route path='/Nightwear' element={<NightWear/>}></Route>
         <Route path='/puresilksaree' element={<PureSilkSaree/>}></Route>
         <Route path='/kurtis' element={<Kurtis/>}></Route>
         <Route path='/product/:productId' element={<Product/>}></Route>

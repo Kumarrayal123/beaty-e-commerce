@@ -1,148 +1,10 @@
 
-
-
-
-// import React, { createContext, useState, useMemo, useEffect } from 'react';
-// import { products } from '../assets/frontend_assets/assets'; // Ensure this path is correct
-// import { useNavigate } from 'react-router-dom';
-// import { toast } from 'react-toastify';
-
-// export const ShopContext = createContext();
-
-// const ShopContextProvider = (props) => {
-//   const currency = "$";
-//   const delivery_fee = 10;
-
-//   // Ensure this environment variable is correctly set in your .env file
-//   const backendUrl = import.meta.env.VITE_BACKEND_URL; // Corrected typo from VITE_BCAKEND_URL to VITE_BACKEND_URL
-
-//   const [search, setSearch] = useState('');
-//   const [showSearch, setShowSearch] = useState(false);
-//   const [cartItems, setCartItems] = useState({});
-//   const [token, setToken] = useState("");
-  
-//   // Ensure this is called within a Router context
-//   const navigate = useNavigate();
-
-//   const addToCart = (itemId, size) => {
-//     let cartData = structuredClone(cartItems);
-    
-//     if (cartData[itemId]) {
-//       if (cartData[itemId][size]) {
-//         cartData[itemId][size] += 1;
-//       } else {
-//         cartData[itemId][size] = 1;
-//       }
-//     } else {
-//       cartData[itemId] = {};
-//       cartData[itemId][size] = 1;
-//     }
-
-//     setCartItems(cartData); // Update cartItems state
-//   };
-
-//   // Calculate cart count
-//   const getCartCount = useMemo(() => {
-//     let totalCount = 0;
-//     for (const items in cartItems) {
-//       for (const item in cartItems[items]) {
-//         totalCount += cartItems[items][item];
-//       }
-//     }
-//     return totalCount;
-//   }, [cartItems]); // Recalculate when cartItems changes
-
-//   const updateQuantity = (itemId, size, quantity) => {
-//     let cartData = structuredClone(cartItems);
-//     if (cartData[itemId] && cartData[itemId][size]) {
-//       if (quantity <= 0) {
-//         delete cartData[itemId][size]; // Remove size if quantity is zero
-//         if (Object.keys(cartData[itemId]).length === 0) {
-//           delete cartData[itemId]; // Remove item if no sizes left
-//         }
-//       } else {
-//         cartData[itemId][size] = quantity; // Update quantity
-//       }
-//     }
-//     setCartItems(cartData);
-
-   
-//   };
-
-//   if(token){
-//     try {
-//       await axios.post("http://localhost:4000/api/cart/add",{itemId,size},{token})
-
-      
-//     } catch (error) {
-//       console.log(error)
-//       toast.error(error.message)
-      
-//     }
-
-//   }
-
-  
-
-//   const getCartAmount = () => {
-//     let totalAmount = 0;
-
-//     for (const itemId in cartItems) {
-//       const itemInfo = products.find(product => product._id === itemId);
-      
-//       if (itemInfo) {
-//         for (const size in cartItems[itemId]) {
-//           const quantity = cartItems[itemId][size];
-//           totalAmount += itemInfo.price * quantity; // Calculate total based on price
-//         }
-//       }
-//     }
-
-//     return totalAmount;
-//   };
-//   useEffect(()=>{
-//     if(!token && localStorage.getItem('token')){
-//       setToken(localStorage.getItem('token'))
-//     }
-//   },[])
-
-//   // Context value to be shared
-//   const value = {
-//     products,
-//     currency,
-//     delivery_fee,
-//     search,
-//     setSearch,
-//     showSearch,
-//     setShowSearch,
-//     cartItems,
-//     addToCart,
-//     getCartCount,
-//     updateQuantity,
-//     getCartAmount,
-//     navigate,
-//     backendUrl,
-//     setToken,
-//     token
-//   };
-
-//   return (
-//     <ShopContext.Provider value={value}>
-//       {props.children}
-//     </ShopContext.Provider>
-//   );
-// };
-
-// export default ShopContextProvider;
-
-
-
 import React, { createContext, useState, useMemo, useEffect } from 'react';
-import { products } from '../assets/frontend_assets/assets'; // Ensure this path is correct
+import { products, silkproduct,Nightwear } from '../assets/frontend_assets/assets'; // Ensure this path is correct
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { silkproduct } from '../assets/frontend_assets/assets';
+import NightWear from '../pages/NightWear';
 
 export const ShopContext = createContext();
 
@@ -284,6 +146,7 @@ const ShopContextProvider = (props) => {
   const value = {
     products,
     silkproduct,
+    NightWear,
     currency,
     delivery_fee,
     search,

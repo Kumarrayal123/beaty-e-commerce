@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <div>
       {/* Hero Carousel */}
-      <div className="flex flex-col sm:flex-row border border-gray-400">
+      <div className="flex flex-col sm:flex-row border-gray-400">
         <Carousel
           className="index"
           showThumbs={false}

@@ -143,14 +143,14 @@ const LatestCollection = () => {
         </p>
       </div>
 
-      {/* Rendering Latest Products */}
+     
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 px-10">
         {latestProducts.map((product) => (
           <div
             key={product._id}
             className="relative overflow-hidden rounded-lg shadow-lg group"
           >
-            {/* Image and Hover Effect */}
+           
             <div className="relative">
               <img
                 src={product.image[0]}
@@ -158,16 +158,27 @@ const LatestCollection = () => {
                 className="w-full h-auto object-cover transition-transform duration-300 ease-in-out cursor-pointer group-hover:scale-105"
                 onClick={() => handleImageClick(product._id)}
               />
-              {/* Add to Cart Button */}
-              <button
-                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-2 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+             
+              {/* <button
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black rounded sm:px-5 py-1 mt-3 sm:px-1 py-1"
                 onClick={() => handleAddToCart(product)}
               >
                 Add to Cart
-              </button>
+              </button> */}
+              <div className="bg bg-opacity-50 text-center p-2 opacity-1 duration-500 ease-in-out">
+              <button
+ 
+  onClick={() => handleAddToCart(product)}
+>
+  Add to Cart
+</button>
+              </div>
+
+
+
             </div>
 
-            {/* Product Details */}
+          
             <div className="text-center py-4">
               <p className="text-lg font-semibold text-gray-800">{product.name}</p>
               <p className="text-md text-gray-600">

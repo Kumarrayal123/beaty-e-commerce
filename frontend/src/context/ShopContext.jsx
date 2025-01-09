@@ -23,6 +23,37 @@ const ShopContextProvider = (props) => {
   // Ensure this is called within a Router context
   const navigate = useNavigate();
 
+  // const addToCart = async (itemId, size) => {
+  //   let cartData = structuredClone(cartItems);
+
+  //   if (cartData[itemId]) {
+  //     if (cartData[itemId][size]) {
+  //       cartData[itemId][size] += 1;
+  //     } else {
+  //       cartData[itemId][size] = 1;
+  //     }
+  //   } else {
+  //     cartData[itemId] = {};
+  //     cartData[itemId][size] = 1;
+  //   }
+
+  //   setCartItems(cartData); // Update cartItems state
+
+  //   // If token exists, send cart data to the backend
+  //   if (token) {
+  //     try {
+  //       await axios.post(
+  //         "https://backend-one-smoky-52.vercel.app/api/cart/add", 
+  //         { itemId, size }, 
+  //         { headers: { Authorization: `Bearer ${token}` } }
+  //       );
+  //       toast.success("Item added to the cart successfully!");
+  //     } catch (error) {
+  //       console.error(error);
+  //       toast.error(error.message);
+  //     }
+  //   }
+  // };
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems);
 
@@ -42,18 +73,29 @@ const ShopContextProvider = (props) => {
     // If token exists, send cart data to the backend
     if (token) {
       try {
-        await axios.post(
+        const response = await axios.post(
           "https://backend-one-smoky-52.vercel.app/api/cart/add", 
           { itemId, size }, 
           { headers: { Authorization: `Bearer ${token}` } }
         );
-        toast.success("Item added to the cart successfully!");
+        
+        // Log the full response for debugging
+        console.log("Response from backend:", response.data);
+
+        if (response.data.success) {
+          toast.success("Item added to the cart successfully!");
+        } else {
+          toast.error(response.data.message || "An error occurred");
+        }
       } catch (error) {
-        console.error(error);
+        console.error("Error during add to cart request:", error);
         toast.error(error.message);
       }
     }
-  };
+};
+
+  
+  
   useEffect(() => {
     if (token) {
       const fetchUserData = async () => {

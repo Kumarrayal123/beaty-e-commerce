@@ -121,8 +121,7 @@ body{
   cursor: pointer;
   border-radius: 5px;
 }
-
-
-
-
-
+.bg{
+  background-color: black;
+  color: white;
+}

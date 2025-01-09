@@ -399,8 +399,9 @@ const Navbar = () => {
             All CATEGORIES
           </button>
           <div
-            className={`absolute top-5 left-0 mt-2 bg-white shadow-md rounded w-48  ${isActive ? "block" : "hidden"
+            className={`absolute top-5 left-0 mt-2 bg-white shadow-md rounded w-48 ${isActive ? "block" : "hidden"
               }`}
+              style={{zIndex: 1000}}
           >
             <ul className="flex flex-col text-gray-500  hover:text-black ">
               {[{ path: "/pattu", label: "Pattu" }].map(({ path, label }) => (

@@ -1038,7 +1038,7 @@ const PlaceOrder = () => {
   
       switch (method) {
         case 'cod':
-          const response = await axios.post('http://localhost:4000/api/order/place', orderData, {
+          const response = await axios.post('https://backend-one-smoky-52.vercel.app/api/order/place', orderData, {
             headers: { 
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${token}` 
@@ -1076,7 +1076,7 @@ const PlaceOrder = () => {
   
             // Send email to the user
             const userEmailResponse = await axios.post(
-              "http://localhost:4000/api/send-mail",
+              "https://backend-one-smoky-52.vercel.app/api/send-mail",
               {
                 email: [formData.email],  // Send to user's email
                 subject: ` Your Manya Order Confirmation`,
@@ -1140,7 +1140,7 @@ const PlaceOrder = () => {
   
             // Send email to the admin
             const adminEmailResponse = await axios.post(
-              "http://localhost:4000/api/send-mail",
+              "https://backend-one-smoky-52.vercel.app/api/send-mail",
               {
                 email: ["pandureddypatterns@gmail.com"],  // Send to admin's email
                 subject: `New Order - Order ID: ${response.data.orderId}`,

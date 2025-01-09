@@ -437,9 +437,9 @@ const Navbar = () => {
         <ul className="hidden sm:flex gap-10 text-sm text-white-700">
           {[{ path: "/", label: "HOME" },
           //  { path: "/Collection", label: "COLLECTION" },
-            { path: "/PureSilkSaree", label: "PURE SILK SAREE" }, 
-            { path: "/Kurtis", label: "KURTIS" },
-            { path: "/Nightwear", label: "NIGHTWEAR" },
+            { path: "/puresilksaree", label: "PURE SILK SAREE" }, 
+            { path: "/kurtis", label: "KURTIS" },
+            { path: "/nightwear", label: "NIGHTWEAR" },
           ]
             .map(({ path, label }) => (
             <NavLink key={path} to={path} className="flex flex-col items-center gap-1">
@@ -493,9 +493,9 @@ const Navbar = () => {
       <div className="sm:hidden flex justify-around bg-black-200 py-2">
         {[{ path: "/", label: "HOME" },
         //  { path: "/Collection", label: "COLLECTION" }, 
-         { path: "/PureSilkSaree", label: "PURE SILK SAREE" }, 
-         { path: "/Kurtis", label: "KURTIS" },
-         { path: "/NightWear", label: "NIGHTWEAR" },
+         { path: "/puresilksaree", label: "PURE SILK SAREE" }, 
+         { path: "/kurtis", label: "KURTIS" },
+         { path: "/nightWear", label: "NIGHTWEAR" },
         ].map(({ path, label }) => (
           <NavLink key={path} to={path} className="text-sm font-medium">
             {label}

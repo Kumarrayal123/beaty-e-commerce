@@ -133,7 +133,7 @@ body{
   color: white;
 }
 .index{
-  height: 100vh;
+  /* height: 100vh; */
 
 }
 .index .carousel.carousel-slider{

@@ -52,6 +52,7 @@ import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
 import N_img1 from './N_img1.jpg'
 import N_img2 from './N_img2.jpg'
+import pp_img1 from './p_img1.1.webp'
 
 
 
@@ -108,7 +109,7 @@ export const products = [
         name: "Dark Aura Silk Tissue Saree",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 5999,
-        image: [p_img1,],
+        image: [p_img1,pp_img1],
         category: "Women",
         subCategory: "SILK",
         // sizes: ["S", "M", "L"],

@@ -24,14 +24,14 @@
 //       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 px-10">
 //       {silkproduct.map((product, index) => (
 //         <div div className="relative group-hover:scale-105 group-hover:shadow-xl transition-transform duration-300 ease-in-out cursor-pointer group-hover:scale-105"
-          
+
 //         >
 //           <img
 //             src={product.image[0]}
 //             alt={product.name}
 //             className="w-full h-auto object-cover transition-all duration-300 cursor-pointer"
 //             onClick={() => handleImageClick(product._id)}
-      
+
 //           />
 //           <div className="text-center py-4">
 //               <p className="text-lg font-semibold text-gray-800">{product.name}</p>
@@ -58,17 +58,17 @@ import 'react-toastify/dist/ReactToastify.css';
 const PureSilkSaree = () => {
   const { silkproduct, currency } = useContext(ShopContext);
   const navigate = useNavigate();
-  const {  addToCart} = useContext(ShopContext);
+  const { addToCart } = useContext(ShopContext);
 
   const handleAddToCart = (product) => {
-      addToCart(product._id, 'default');
-      // toast.success(`Added to the cart!`);
-    };
+    addToCart(product._id, 'default');
+    // toast.success(`Added to the cart!`);
+  };
 
-    const handleImageClick = (productId) => {
-      navigate(`/product/${productId}`);
-    };
-   
+  const handleImageClick = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
     <div className="my-10">
       <div className="text-center py-8 text-3xl">
@@ -90,7 +90,7 @@ const PureSilkSaree = () => {
                 src={product.image[0]}
                 alt={product.name}
                 className="w-full h-auto object-cover transition-transform duration-300 ease-in-out cursor-pointer group-hover:scale-105"
-                onClick={() =>handleImageClick (product._id)}
+                onClick={() => handleImageClick(product._id)}
               />
               {/* Add to Cart Button */}
 
@@ -101,12 +101,12 @@ const PureSilkSaree = () => {
                 Add to Cart
               </button> */}
               <div className="bg bg-opacity-50 text-center p-2 opacity-1 duration-500 ease-in-out">
-              <button
- 
-  onClick={() => handleAddToCart(product)}
->
-  Add to Cart
-</button>
+                <button
+
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
 
@@ -120,7 +120,7 @@ const PureSilkSaree = () => {
       </div>
       <ToastContainer />
     </div>
-  );a
+  ); a
 };
 
 export default PureSilkSaree;

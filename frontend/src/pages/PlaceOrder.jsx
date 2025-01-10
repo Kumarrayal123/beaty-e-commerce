@@ -1176,7 +1176,7 @@ const PlaceOrder = () => {
   return (
     <form
       ref={formRef}
-      className="flex flex-col sm:flex-row justify gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t"
+      className="flex flex-col sm:flex-row justify gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t px-10"
       onSubmit={onSubmitHandler}
     >
       {/* Left side */}
@@ -1309,7 +1309,7 @@ const PlaceOrder = () => {
         <div className="w-full text-end mt-t">
           <button
             type="submit"
-            className="bg-black text-white px-16 py-3 text-sm"
+            className="bg-black text-white rounded-lg px-5 py-3 text-sm mt-2"
           >
             PLACE ORDER
           </button>

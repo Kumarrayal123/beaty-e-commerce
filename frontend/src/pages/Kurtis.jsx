@@ -78,7 +78,7 @@ const Kurtis = () => {
   }
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 border-t pt-6'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 border-t pt-6 px-10'>
       <div className='min-w-60'>
         <p
           className='my-2 text-xl flex items-center cursor-pointer gap-2'
@@ -125,7 +125,7 @@ const Kurtis = () => {
         
         
 
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 relative overflow-hidden '>
           {filterProducts.map((product, index) => (
             
             <Link to={`/product/${product._id}`} key={index}> {/* Use _id here instead of id */}
@@ -137,7 +137,7 @@ const Kurtis = () => {
     price={product.price}
     image={product.image[0]}
     
-  />
+  className="rounded-lg shadow-lg"/>
 </Link>
 
           ))}

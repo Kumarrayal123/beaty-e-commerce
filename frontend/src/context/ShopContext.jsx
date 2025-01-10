@@ -76,7 +76,7 @@ const ShopContextProvider = (props) => {
         const response = await axios.post(
           "https://backend-one-smoky-52.vercel.app/api/cart/add", 
           { itemId, size }, 
-          { headers: { Authorization: `Bearer ${token}` } }
+          { headers: { "Content-Type": "application/json", 'Authorization': `Bearer ${token}` } }
         );
         
         // Log the full response for debugging

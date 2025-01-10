@@ -64,6 +64,11 @@ const Kurtis = () => {
     applyFilter()
   }, [category, subcategory])
 
+  const handleAddToCart = (product) => {
+    addToCart(product._id, 'default');
+    // toast.success(`Added to the cart!`);
+  };
+
   useEffect(() => {
     sortProduct()
   }, [sortType, filterProducts])
@@ -109,6 +114,14 @@ const Kurtis = () => {
             <option value="high-low">Sort by: High to Low</option>
           </select>
         </div>
+        <div className="bg-opacity-50 text-center p-2 opacity-1 duration-500 ease-in-out">
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="bg-white text-black px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
         
         
 
@@ -116,14 +129,19 @@ const Kurtis = () => {
           {filterProducts.map((product, index) => (
             
             <Link to={`/product/${product._id}`} key={index}> {/* Use _id here instead of id */}
+            
   <ProductItem
+  
     name={product.name}
     id={product._id} // Pass _id here to ProductItem as well
     price={product.price}
     image={product.image[0]}
+    
   />
 </Link>
+
           ))}
+          
         </div>
       </div>
     </div>
@@ -131,3 +149,8 @@ const Kurtis = () => {
 }
 
 export default Kurtis
+
+
+
+
+

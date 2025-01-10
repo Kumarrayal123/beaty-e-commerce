@@ -3,7 +3,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel styles
-import HeroImage from '../assets/frontend_assets/Hero_1.1.jpg';
+// import HeroImage from '../assets/frontend_assets/Hero_1.1.jpg';
+import Heroimage from '../assets/frontend_assets/Hero_1.1.png'
 import HeroImage1 from '../assets/frontend_assets/Hero_2.png';
 import HeroImage2 from '../assets/frontend_assets/Hero-3.11.png';
 import Puresilk from '../assets/frontend_assets/puresilk.jpg';
@@ -35,7 +36,7 @@ const Hero = () => {
           <div>
             <img
               className="w-full h-6px object-cover"
-              src={HeroImage}
+              src={Heroimage}
               alt="Hero Image"
             />
           </div>

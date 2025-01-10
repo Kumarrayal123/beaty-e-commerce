@@ -43,9 +43,16 @@ body{
   display: none;
 }
 .navbar{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.01);
   color: white;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
 }
+
+
+
 
 
 .index{
@@ -124,4 +131,20 @@ body{
 .bg{
   background-color: black;
   color: white;
+}
+.index{
+  height: 100vh;
+
+}
+.index .carousel.carousel-slider{
+height: 100% !important;
+}
+.index .hero-slider{
+  height: 100% !important;
+}
+.category{
+  color: black;
+}
+.text{
+  color: black;
 }

@@ -93,12 +93,21 @@ const PureSilkSaree = () => {
                 onClick={() =>handleImageClick (product._id)}
               />
               {/* Add to Cart Button */}
-              <button
+
+              {/* <button
                 className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-2 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 onClick={() =>handleAddToCart(product)}
               >
                 Add to Cart
-              </button>
+              </button> */}
+              <div className="bg bg-opacity-50 text-center p-2 opacity-1 duration-500 ease-in-out">
+              <button
+ 
+  onClick={() => handleAddToCart(product)}
+>
+  Add to Cart
+</button>
+              </div>
             </div>
 
             {/* Product Details */}

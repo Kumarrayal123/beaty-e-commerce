@@ -395,11 +395,11 @@ const Navbar = () => {
           onMouseEnter={() => setIsActive(true)}
           onMouseLeave={() => setIsActive(false)}
         >
-          <button className="text-sm font-medium py-2 px-4 rounded text-white-700 size-15">
+          <button className="text-sm font-medium py-2 px-4 sm:mt-2 rounded text-white-700 size-15 sm:px-5">
             All CATEGORIES
           </button>
           <div
-            className={`absolute top-5 left-0 mt-2 bg-white shadow-md rounded w-48 ${isActive ? "block" : "hidden"
+            className={`absolute top-8 left-0 mt-2 bg-white shadow-md rounded w-48 ${isActive ? "block" : "hidden"
               }`}
               style={{zIndex: 1000}}
           >

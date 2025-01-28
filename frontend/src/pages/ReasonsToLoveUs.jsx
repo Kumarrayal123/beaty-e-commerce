@@ -136,7 +136,7 @@ const ReasonsToLoveUs = () => {
     {images.map((image, index) => (
       <div key={index} className="p-2 group">
         <img
-          className="w-full object-cover rounded-md shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl"
+          className="w-full object-cover rounded-md shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-105"
           src={image}
           alt={`Slide ${index + 1}`}
         />

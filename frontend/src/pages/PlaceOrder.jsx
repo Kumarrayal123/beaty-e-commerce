@@ -1118,7 +1118,7 @@ const PlaceOrder = () => {
       <span class="font-medium">Size:</span> ${item.size}
     </p>
     <p class="mb-1 text-sm">
-      <span class="font-medium">Quantity:</span> ${item.quantity}
+      <span class="font-medium">Quantity:</span> ${item.quantity} 
     </p>
     <p class="text-sm">
       <span class="font-medium">Total Cost:</span> $${(item.quantity * item.price).toFixed(2)}
@@ -1126,7 +1126,7 @@ const PlaceOrder = () => {
   </div>
 </li>`
                   )
-                  .join("")}
+                  .join("")} 
               </ul>
               <h3>Delivery Details:</h3>
               <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>

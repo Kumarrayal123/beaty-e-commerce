@@ -64,29 +64,50 @@ const Product = () => {
     <div className="product-container">
       <div className="flex flex-col sm:flex-row gap-12 p-4 sm:p-6 lg:p-8">
   <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
-    <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[19.7%] w-full p-2 sm:p-4'>
+
+    {/* <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[19.7%] w-full p-2 sm:p-4'>
       {productData.image.map((item, index) => (
         <img
           src={item}
           key={index}
-          className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer mt-2 p-2 sm:p-4'
+          className='w-[24%] sm:w-full sm:mb-1 flex-shrink-0 cursor-pointer mt-2 pt-1 sm:p-4 object-cover rounded-lg'
           onClick={() => setImage(item)}
         />
       ))}
+    </div> */}
+    <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[19.7%] w-full p-2 sm:p-4">
+  {productData.image.map((item, index) => (
+    <img
+      src={item}
+      key={index}
+      className="w-[24%] sm:w-full h-[120px] sm:h-auto sm:mb-2 flex-shrink-0 cursor-pointer mt-2 object-cover rounded-lg border border-gray-200"
+      onClick={() => setImage(item)}
+    />
+  ))}
+</div>
+
+    <div className='w-full sm:w-[60%] p-2 sm:p-4 object-cover rounded-lg'>
+      
+      <img 
+  className="w-[400px] h-[450px] object-cover rounded-lg" 
+  src={image} 
+  alt={productData.name} 
+/>
+
     </div>
-    <div className='w-full sm:w-[60%] p-2 sm:p-4'>
-      <img className='w-[400px] h-[400px] object-cover px-5 mt-2' src={image} alt={productData.name} />
-    </div>
+    
   </div>
 
   {/* Product Info */}
   <div className="flex-1 mt-2 p-4 sm:p-6 lg:p-8">
     <h1 className="text-2xl font-medium">{productData.name}</h1>
+    {/* <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" /> */}
     <p className="text-3xl font-medium mt-5">
       {currency}
       {productData.price}
     </p>
     <p className="text-gray-500 mt-5">{productData.description}</p>
+    <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
 
     {/* Color Selection */}
     <div className="colors mt-4 flex gap-2">
@@ -102,16 +123,18 @@ const Product = () => {
 
     <button
       onClick={handleAddToCart}
-      className="add-to-cart bg-black text-white mt-5 p-3 sm:p-6 lg:p-2"
+      className="add-to-cart bg-black text-white mt-5 p-3 sm:p-6 lg:p-2 rounded-lg"
     >
       ADD TO CART
     </button>
-    <hr className='mt-8 sm:w-4/5 py-5' />
+    <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
+    {/* <hr className='mt-8 sm:w-4/5 py-5' /> */}
     <div className='text-sm text-gray-500 flex flex-col gap-1 p-3 sm:p-6 lg:p-1 '>
       <p>100% original products</p>
       <p>Cash on delivery is available for this product</p>
       <p>Easy return exchange available within 7 days</p>
     </div>
+    <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
 
     {/* Product Features Section */}
     <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1 p-3 sm:p-6 lg:p-1">

@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, silkproduct,NightWear, currency, addToCart,} = useContext(ShopContext);
+  const { products, silkproduct,NightWear, SoftPattu, currency, addToCart,} = useContext(ShopContext);
   const [productData, setProductData] = useState(null);
   const [image, setImage] = useState("");
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -18,26 +18,61 @@ const Product = () => {
   const [isWashingCareVisible, setIsWashingCareVisible] = useState(false);
   const [isstylingVisible ,setIsStylingVisible] = useState(false)
  
+  // useEffect(() => {
+  //   // Ensure data is loaded before proceeding
+  //   if (products?.length || silkproduct?.length ||NightWear?.length) {
+  //     // First check if product exists in `silkproduct`
+  //     const isSilkProduct = silkproduct?.find((item) => item._id === productId);
+  //     const product = isSilkProduct || products?.find((item) => item._id === productId);
+      
+  //     if (product) {
+  //       setProductData(product);
+  //       setImage(product.image[0]); // Set default image
+  //       setRelatedProducts(
+  //         (isSilkProduct ? silkproduct : products)?.filter(
+  //           (item) => item.name === product.name && item._id !== productId
+  //         )
+  //       );
+  //     }
+  //   }
+  // }, [productId, products, silkproduct]);
+ 
   useEffect(() => {
+    // Ensure that NightWear is an array
+    const validNightWear = Array.isArray(NightWear) ? NightWear : [];
+  
     // Ensure data is loaded before proceeding
-    if (products?.length || silkproduct?.length ||NightWear?.length) {
-      // First check if product exists in `silkproduct`
+    if (
+      (Array.isArray(products) && products.length) ||
+      (Array.isArray(silkproduct) && silkproduct.length) ||
+      validNightWear.length > 0 ||
+      (Array.isArray(SoftPattu) && SoftPattu.length)
+    ) {
+      // Check if product exists in any of the arrays
       const isSilkProduct = silkproduct?.find((item) => item._id === productId);
-      const product = isSilkProduct || products?.find((item) => item._id === productId);
+      const isNightWearProduct = validNightWear.find((item) => item._id === productId);
+      const isSoftPattuProduct = SoftPattu?.find((item) => item._id === productId);
+      
+      // Find the product from the correct array
+      const product = isSilkProduct || isNightWearProduct || isSoftPattuProduct || products?.find((item) => item._id === productId);
       
       if (product) {
         setProductData(product);
         setImage(product.image[0]); // Set default image
         setRelatedProducts(
-          (isSilkProduct ? silkproduct : products)?.filter(
+          (isSilkProduct ? silkproduct : 
+           isNightWearProduct ? validNightWear : 
+           isSoftPattuProduct ? SoftPattu : products
+          )?.filter(
             (item) => item.name === product.name && item._id !== productId
           )
         );
       }
     }
-  }, [productId, products, silkproduct]);
-
-
+  }, [productId, products, silkproduct, NightWear, SoftPattu]);
+  
+  
+  
   const handleAddToCart = () => {
     addToCart(productData._id);
     // navigate('/cart');
@@ -65,16 +100,7 @@ const Product = () => {
       <div className="flex flex-col sm:flex-row gap-12 p-4 sm:p-6 lg:p-8">
   <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
 
-    {/* <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[19.7%] w-full p-2 sm:p-4'>
-      {productData.image.map((item, index) => (
-        <img
-          src={item}
-          key={index}
-          className='w-[24%] sm:w-full sm:mb-1 flex-shrink-0 cursor-pointer mt-2 pt-1 sm:p-4 object-cover rounded-lg'
-          onClick={() => setImage(item)}
-        />
-      ))}
-    </div> */}
+   
     <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[19.7%] w-full p-2 sm:p-4">
   {productData.image.map((item, index) => (
     <img
@@ -137,11 +163,12 @@ const Product = () => {
     <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
 
     {/* Product Features Section */}
-    <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1 p-3 sm:p-6 lg:p-1">
+    <div className="text-sm text-gray-500 mt-1 flex flex-col gap-1 p-3 sm:p-3 lg:p-1">
       <p onClick={toggleFeaturesVisibility} className="cursor-pointer">
         <FontAwesomeIcon icon={faPlus} />
         PRODUCT FEATURE
       </p>
+      
       <ul
         className={`transition-all duration-300 ease-in-out overflow-hidden ${isFeaturesVisible ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}
       >
@@ -182,6 +209,7 @@ const Product = () => {
           <span>Exclusively designed by our expert designers and made in Varanasi</span>
         </li>
       </ul>
+      <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
     </div>
 
     {/* WASHING & CARE INSTRUCTION */}
@@ -222,6 +250,7 @@ const Product = () => {
           <span>Store your saree in a cotton bag or box when not in use.</span>
         </li>
       </ul>
+      <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
     </div>
 
     {/* Styling Instruction Section */}
@@ -250,6 +279,7 @@ const Product = () => {
           </span>
         </li>
       </ul>
+      <hr className="mt-4 w-full sm:w-4/5 border-t-2 border-gray-300" />
     </div>
   </div>
 </div>

@@ -53,6 +53,7 @@ import p_img52 from './p_img52.png'
 import N_img1 from './N_img1.jpg'
 import N_img2 from './N_img2.jpg'
 import pp_img1 from './p_img1.1.webp'
+import sp_img1 from './sp_img1.jpg'
 
 
 
@@ -220,7 +221,7 @@ export const products = [
         price: 9999,
         image: [p_img10],
         category: "Men",
-        subCategory: "Bottomwear",
+        subCategory:"SILK",
         sizes: ["S", "L", "XL"],
         date: 1716622235448,
         bestseller: false
@@ -888,5 +889,79 @@ export const Nightwear =[
         image: [N_img2],
         category: "Women",
         date: 1716634345448,
+    }
+]
+
+export const SoftPattu =[
+    {
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+
+    },
+    {
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+
+    },{
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+    },{
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+    },{
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+    }
+]
+
+
+export const KanchiSoft =[
+    {
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+
+    }
+]
+
+export const KanchiFancy =[
+    {
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+
     }
 ]

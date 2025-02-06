@@ -195,7 +195,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 // Importing assets
@@ -290,12 +290,15 @@ const Hero = () => {
 
             {/* View Icon */}
             <div
-              className="absolute top-3 right-2 p-1  rounded-full shadow-lg cursor-pointer"
+              className="absolute top-3 right-5 p-1  rounded-full shadow-lg cursor-pointer sm-top-3 right-5 p-1"
               onClick={() => handleViewImage(item.src)}
             >
-              {/* <span className="text-gray-700 text-lg font-semibold">👁️</span> */}
-              <FontAwesomeIcon icon={faEye} className="h-2 w-2"/>
+              
+              <FontAwesomeIcon icon={faMagnifyingGlassPlus} style={{ color: 'white' }} className="h-4 w-4" />
+
             </div>
+            
+
 
             {/* Category Label */}
             <p className="mt-3 text-sm md:text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">

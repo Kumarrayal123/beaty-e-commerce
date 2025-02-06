@@ -1,10 +1,11 @@
 
 import React, { createContext, useState, useMemo, useEffect } from 'react';
-import { products, silkproduct,Nightwear } from '../assets/frontend_assets/assets'; // Ensure this path is correct
+import { products, silkproduct,Nightwear,SoftPattu,KanchiSoft,KanchiFancy } from '../assets/frontend_assets/assets'; // Ensure this path is correct
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import NightWear from '../pages/NightWear';
+
 
 export const ShopContext = createContext();
 
@@ -159,6 +160,9 @@ const ShopContextProvider = (props) => {
   const value = {
     products,
     silkproduct,
+    SoftPattu,
+    KanchiFancy,
+    KanchiSoft,
     NightWear,
     currency,
     delivery_fee,

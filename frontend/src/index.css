@@ -149,3 +149,27 @@ height: 100% !important;
   color: black;
 }
 
+.drop-duwn{
+  height: auto;
+  width: 100vw;
+  top: 60%;
+  left: 0;
+  height: 100vh;
+}
+ul.nav{
+  display: flex;
+  flex-direction: column;
+  top:10px;
+}
+ul.nav li.nav-link{
+border: 2px solid black;
+width: fit-content;
+}
+li.nav-link{
+position: relative;
+}
+ul.nav .dp{
+display: flex;
+flex-direction: row;
+  
+}

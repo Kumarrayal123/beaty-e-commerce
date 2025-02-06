@@ -60,9 +60,14 @@ const PureSilkSaree = () => {
   const navigate = useNavigate();
   const { addToCart } = useContext(ShopContext);
 
+  // const handleAddToCart = (product) => {
+  //   addToCart(product._id, 'default');
+  //   // toast.success(`Added to the cart!`);
+  // };
+
   const handleAddToCart = (product) => {
     addToCart(product._id, 'default');
-    // toast.success(`Added to the cart!`);
+    toast.success(`Added to the cart!`);
   };
 
   const handleImageClick = (productId) => {

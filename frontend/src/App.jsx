@@ -15,10 +15,14 @@ import SearchBar from "./components/SearchBar";
 import SilkSaree from "./pages/PureSilkSaree";
 import BestSelling from "./pages/Kurtis";
 import NightWear from "./pages/NightWear";
+import  SoftPattu  from "./components/pattu/SoftPattu";
+import KanchiSoft from "./components/pattu/KanchiSoft";
+import kanchiFancy from "./components/pattu/KanchiFancy"
 
 import "../src/index.css"
 import PureSilkSaree from "./pages/PureSilkSaree";
 import Kurtis from "./pages/Kurtis";
+import { KanchiFancy } from "./assets/frontend_assets/assets";
 
 export default function App() {
   // State to track the active status of the cart
@@ -43,6 +47,9 @@ export default function App() {
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/place-order' element={<PlaceOrder/>}></Route>
         <Route path='/orders' element={<Orders/>}></Route>
+        <Route path='/soft-pattu' element={<SoftPattu/>}></Route>
+        <Route path='/kanchi-soft' element={<KanchiSoft/>}></Route>
+        <Route path='/kanchi-fancy' element={< kanchiFancy/>}></Route>
 
       </Routes>
       <Footer/>

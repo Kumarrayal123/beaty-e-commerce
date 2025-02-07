@@ -50,6 +50,50 @@ body{
   right: 0;
   top: 0;
 }
+button.nav-link{
+width: fit-content;
+color: black;
+}
+
+.drop-down{
+  width: 100vw;
+  overflow-x: scroll;
+}
+.banarasi ,.pattu{
+  width: 100vw;
+  top: 20%;
+  left: 0;
+  
+}
+.banarasi,.pattu{
+ /* margin-left: 200px; */
+ 
+}
+.dropdown-menus{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid black;
+}
+.dropdown-menus button{
+  border-right: 1px solid black;
+  padding: 10px 20px;
+}
+.banarasi ul,.pattu ul{
+display: flex;
+flex-direction: row;
+gap: 20px;
+
+flex-wrap: wrap;
+}
+.banarasi ul li,.pattu ul li{
+  color: black;
+  font-size: 18px;
+ 
+}
+
+
+
+
 
 
 

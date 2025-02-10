@@ -1,10 +1,10 @@
 
 import React, { createContext, useState, useMemo, useEffect } from 'react';
-import { products, silkproduct,Nightwear,SoftPattu,KanchiSoft,KanchiFancy } from '../assets/frontend_assets/assets'; // Ensure this path is correct
+import { products, silkproduct,SoftPattu,KanchiSoft,KanchiFancy,KanchiPattu,SoftSilk } from '../assets/frontend_assets/assets'; // Ensure this path is correct
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import NightWear from '../pages/NightWear';
+// import NightWear from '../pages/NightWear';
 
 
 export const ShopContext = createContext();
@@ -161,9 +161,11 @@ const ShopContextProvider = (props) => {
     products,
     silkproduct,
     SoftPattu,
+    KanchiPattu,
+    SoftSilk,
     KanchiFancy,
     KanchiSoft,
-    NightWear,
+    // NightWear,
     currency,
     delivery_fee,
     search,

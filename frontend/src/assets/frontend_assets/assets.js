@@ -965,3 +965,30 @@ export const KanchiFancy =[
 
     }
 ]
+
+export const KanchiPattu =[
+    {
+        
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+
+    }
+]
+
+export const SoftSilk = [
+    {
+        _id: "Pure Soft Pattu saree",
+        name: "Pure Soft Pattu saree",
+        description: "pure soft pattu Women's Knitted & Block Printed Cotton Lycra Co-ords Set/Sleepwear/Night Dress/Night Wear/Pajama Sets.",
+        price: 499,
+        image: [ sp_img1],
+        category: "Women",
+        date: 1716634345448,
+
+    }
+]

@@ -11,20 +11,20 @@ import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons';
 
 Modal.setAppElement('#root');
 
-const KanchiSoft = () => {
-  const { products, addToCart, currency,KanchiSoft } = useContext(ShopContext);
-  const [kanchipattu, setkanchisoft] = useState([]);
+const KanchiPattu = () => {
+  const { products, addToCart, currency,SoftPattu,KanchiPattu } = useContext(ShopContext);
+  const [kanchipattu, setkanchipattu] = useState([]);
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null); //  Fix: Added this state
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-;
+
 useEffect(() => {
-    if (KanchiSoft) {
-        setkanchisoft(KanchiSoft);
+    if (KanchiPattu) {
+        setkanchipattu(KanchiPattu);
     }
-}, [KanchiSoft]); // Add SoftPattu as a dependency
+}, [KanchiPattu]); // Add SoftPattu as a dependency
 
 
 
@@ -49,7 +49,6 @@ useEffect(() => {
     setSelectedImage(imageSrc);  
     setIsModalOpen(true);
   };
-
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
@@ -58,14 +57,14 @@ useEffect(() => {
   return (
     <div className="my-10">
       <div className="text-center py-8 text-3xl">
-        <Title text2="Kanchi Soft"/>
+        <Title text2="Kanchi Pattu" />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
           Wrap yourself in the unmatched luxury of our latest soft silk saree collection
         </p>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 px-10">
-        {KanchiSoft ?.map((product) => (
+        {kanchipattu ?.map((product) => (
           <div
             key={product._id}
             className="relative overflow-hidden rounded-lg shadow-lg group"
@@ -149,4 +148,4 @@ useEffect(() => {
   );
 };
 
-export default KanchiSoft;
+export default KanchiPattu;

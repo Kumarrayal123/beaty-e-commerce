@@ -86,7 +86,7 @@ gap: 20px;
 flex-wrap: wrap;
 }
 .banarasi ul li,.pattu ul li{
-  color: black;
+  color:gray;
   font-size: 18px;
  
 }
@@ -216,4 +216,7 @@ ul.nav .dp{
 display: flex;
 flex-direction: row;
   
+}
+.nav-text li{
+  font-size: 1rem !important;
 }

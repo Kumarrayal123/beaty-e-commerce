@@ -170,10 +170,13 @@ import { assets, KanchiSoft } from "../assets/frontend_assets/assets";
 import CartTotal from "../components/CartTotal";
 import { Link } from "react-router-dom";
 import SoftPattu from "../components/pattu/SoftPattu";
+import KanchiPattu from "../components/pattu/KanchiPattu";
+// import NightWear from "./NightWear";
+
 
 
 const Cart = () => {
-  const { products, silkproduct,SoftPattu, cartItems,KanchiSoft, updateQuantity,KanchiFancy, navigate } = useContext(ShopContext);
+  const { products, silkproduct,SoftPattu, cartItems,KanchiSoft, updateQuantity,KanchiFancy,KanchiPattu, navigate } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   const [relatedProducts, setRelatedProducts] = useState([]);
 
@@ -184,7 +187,7 @@ const Cart = () => {
     const cartProductCategories = new Set();
 
     // Merge products and silkproducts
-    const allProducts = [...products, ...silkproduct,...SoftPattu,...KanchiSoft,...KanchiFancy];
+    const allProducts = [...products, ...silkproduct,...SoftPattu,...KanchiSoft,...KanchiFancy,...KanchiPattu,];
 
     for (const itemId in cartItems) {
       for (const size in cartItems[itemId]) {
@@ -215,7 +218,7 @@ const Cart = () => {
         !tempData.some((cartItem) => cartItem._id === product._id)
     );
     setRelatedProducts(related);
-  }, [cartItems, products, silkproduct,SoftPattu,KanchiSoft,KanchiFancy]);
+  }, [cartItems, products, silkproduct,SoftPattu,KanchiSoft,KanchiFancy,KanchiPattu]);
 
   const handleIncrement = (itemId, size) => {
     const currentQuantity = cartItems[itemId]?.[size] || 0;

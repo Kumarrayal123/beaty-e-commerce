@@ -83,7 +83,7 @@ const Navbar = () => {
                   setIshandLoomActive(false);
                 }}
               >
-                Banarasi Sarees
+                Fancy
               </button>
               <button 
                 className="block nav-link w-full text-left px-4 py-2 hover:bg-gray-200"
@@ -93,49 +93,48 @@ const Navbar = () => {
                   setIsPattuActive(false);
                 }}
               >
-                Hand Loom
+                Banaras
               </button>
               </div>
             <ul className="flex nav flex-col text-gray-500 hover:text-black">
               <div
                 className="px-4 pattu py-2 tex-gray-500 hover:text-black relative"
-                // onMouseEnter={() => {
-                //   setIsPattuActive(true);
-                //   setIsBanarasiActive(false);
-                // }}
-                // onMouseLeave={() => setIsPattuActive(false)}
+    
               >
                 
 
                 {isPattuActive && (
-                  <div className=" mt-2 bg-white" style={{ zIndex: 1000 }}>
-                    <ul className="flex flex-wrap gap-4 text-gray-500">
-                      {[
-                        "Soft Pattu",
-                        "Kanchi Soft",
-                        "Kannchi Fancy Sarees",
-                        "Kanchi Pattu",
-                        "Soft Silk",
-                        "Pure Kanjivaram",
-                        "Narayanpet Silks",
-                        "Kanchi Tissue",
-                        "Pure Kanjivaram Meena",
-                        "Copper Jari with Shiffan Sarees",
-                        "Pure 24K Gold Zari Saree",
-                        "Kupadam Sarees",
-                        "Kalakshetra Pattu",
-                        "Borderless Saree",
-                        "Kathan Pattu",
-                        "Pure Kanchi Pattu Ikkath Design",
-                        "Kuttu Border Pattu",
-                        "1Gm Zari Gold",
-                      ].map((label, index) => (
-                        <li key={index} className="px-4 py-2 hover:text-black w-32">
-                          <NavLink to={`/${label.toLowerCase().replace(/ /g, "-")}`}>{label}</NavLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <div className="mt-2 bg-white" style={{ zIndex: 1000 }}>
+  <ul className="flex flex-wrap gap-4 text-gray-500 nav-text">
+    {[
+      "Soft Pattu",
+      "Kanchi Soft",
+      "Kannchi Fancy Sarees",
+      "Kanchi Pattu",
+      "Soft Silk",
+      "Pure Kanjivaram",
+      "Narayanpet Silks",
+      "Kanchi Tissue",
+      "Pure Kanjivaram Meena",
+      "Copper Jari with Shiffan Sarees",
+      "Pure 24K Gold Zari Saree",
+      "Kupadam Sarees",
+      "Kalakshetra Pattu",
+      "Borderless Saree",
+      "Kathan Pattu",
+      "Pure Kanchi Pattu Ikkath Design",
+      "Kuttu Border Pattu",
+      "1Gm Zari Gold",
+    ].map((label, index) => (
+      <li key={index} className="px-4 py-2 hover:text-black w-32 nav-text md:text-base ">
+        <NavLink to={`/${label.toLowerCase().replace(/ /g, "-")}`}>
+          {label}
+        </NavLink>
+      </li>
+    ))}
+  </ul>
+</div>
+
                 )}
               </div>
 
@@ -150,26 +149,45 @@ const Navbar = () => {
                
                 {isBanarasiActive && (
                   <div className="mt-2 bg-white " style={{ zIndex: 1000 }}>
-                    <ul className="flex flex-wrap gap-4 text-gray-500">
+                    <ul className="flex flex-wrap gap-4 text-gray-500 nav-text">
                       {[
-                        "Soft Pattu",
-                        "Kanchi Soft Silk",
-                        "Kannchi Fancy Sarees",
-                        "Kanchi Pattu",
-                        "Soft Silk",
-                        "Pure Kanjivaram",
-                        "Narayanpet Silks",
-                        "Kanchi Tissue",
-                        "Pure Kanjivaram Meena",
-                        "Copper Jari with Shiffan Sarees",
-                        "Pure 24K Gold Zari Saree",
-                        "Kupadam Sarees",
-                        "Kalakshetra Pattu",
-                        "Borderless Saree",
-                        "Kathan Pattu",
-                        "Pure Kanchi Pattu Ikkath Design",
-                        "Kuttu Border Pattu",
-                        "1Gm Zari Gold",
+                        
+                       " Desiner sarees",
+                       "Akruthi sarees",
+                       "Ikkath Fancy",
+                      "Uppada plain tissue sarees",
+                      "fancy paithani saree",
+"friendly budjet sarees",
+"silver tissue",
+"JAIPUR KOTA SAREES",
+"3d Printed sarees",
+"DIGITAL PRINT",
+"CHINIYA SILKS",
+"Bailu silks",
+"VANAM SILKS",
+"SANA SILKS",
+"CUT WORK SAREES",
+"Latest collection",
+"Silk Kota",
+"Bandhani sarees",
+"Matty georgette sarees",
+"Assam Silk",
+"Shibori sarees",
+"Kalamkari Jarget",
+"Georgette sarees",
+"Dupiyana silk",
+"Uppada Tissue Fancy",
+"Antique Sarees",
+"New designs",
+"Chiffon shibori sarees",
+"Mangalgiri Sarees",
+"Kowai Silk Sarees",
+"Raw Mango",
+"Pastel Sarees",
+"Kora Sarees",
+"Organza Sarees",
+                       
+
                       ].map((label, index) => (
                         <li key={index} className="px-4 py-2 hover:text-black w-32">
                           <NavLink to={`/${label.toLowerCase().replace(/ /g, "-")}`}>{label}</NavLink>
@@ -190,26 +208,25 @@ const Navbar = () => {
                
                 {ishandLoomActive && (
                   <div className="mt-2 bg-white " style={{ zIndex: 1000 }}>
-                    <ul className="flex flex-wrap gap-4 text-gray-500">
-                      {[
-                        "Soft Pattu",
-                        "Kanchi Soft Silk",
-                        "Kannchi Fancy Sarees",
-                        "Kanchi Pattu",
-                        "Soft Silk",
-                        "Pure Kanjivaram",
-                        "Narayanpet Silks",
-                        "Kanchi Tissue",
-                        "Pure Kanjivaram Meena",
-                        "Copper Jari with Shiffan Sarees",
-                        "Pure 24K Gold Zari Saree",
-                        "Kupadam Sarees",
-                        "Kalakshetra Pattu",
-                        "Borderless Saree",
-                        "Kathan Pattu",
-                        "Pure Kanchi Pattu Ikkath Design",
-                        "Kuttu Border Pattu",
-                        "1Gm Zari Gold",
+                    <ul className="flex flex-wrap gap-4 text-gray-500 nav-text">
+                      {[      
+                        
+"Banarasi patola",
+"Banarasi soft silk",
+"Patola fancy",
+"Pure silk",
+"Tissue sarees",
+"Dola silk",
+"Banarasi Lace",
+"Jute silk",
+"Kubera Silk",
+"Banarasi sarees",
+"Chiniya paithani sarees",
+"Fancy sarees",
+"Dola Crape",
+"Kashmiri silk",
+                           
+                        
                       ].map((label, index) => (
                         <li key={index} className="px-4 py-2 hover:text-black w-32">
                           <NavLink to={`/${label.toLowerCase().replace(/ /g, "-")}`}>{label}</NavLink>
@@ -243,7 +260,7 @@ const Navbar = () => {
             { path: "/", label: "HOME" },
             { path: "/puresilksaree", label: "PURE SILK SAREE" },
             { path: "/kurtis", label: "KURTIS" },
-            { path: "/nightwear", label: "NIGHTWEAR" },
+            // { path: "/nightwear", label: "NIGHTWEAR" },
           ].map(({ path, label }) => (
             <NavLink key={path} to={path} className="flex flex-col items-center gap-1">
               <p>{label}</p>
@@ -297,7 +314,7 @@ const Navbar = () => {
           { path: "/", label: "HOME" },
           { path: "/puresilksaree", label: "PURE SILK SAREE" },
           { path: "/kurtis", label: "KURTIS" },
-          { path: "/nightwear", label: "NIGHTWEAR" },
+          // { path: "/nightwear", label: "NIGHTWEAR" },
         ].map(({ path, label }) => (
           <NavLink key={path} to={path} className="text-sm font-medium">
             {label}
